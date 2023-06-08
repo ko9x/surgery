@@ -27,7 +27,7 @@ RUN node --version
 RUN npm --version
 
 # Create the alias ll for the command ls -l
-RUN echo 'alias "ll=ls -l"' >> ~/.bashrc
+RUN echo 'alias "ll=ls -al"' >> ~/.bashrc
 
 WORKDIR /var/www
 
