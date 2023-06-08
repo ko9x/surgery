@@ -1,10 +1,5 @@
 ### Current Focus
-* Create another project because we fucked this one up
-    * Driver [filex] not supported when going to localhost:8080 
-        * Also cannot get postman to give anything but a 404
-            * Except when hitting http://localhost:8080/
-                * That gives some text from the app but nothing useful
-
+* Get postman working so we can test what the endpoints do
 * Figure out what the api is so we can hit endpoints that say something like api/item/{item}
     * is the api portion just http://localhost:8080?
 * Create BreakPointController
