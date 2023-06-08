@@ -29,6 +29,9 @@ RUN npm --version
 # Create the alias ll for the command ls -l
 RUN echo 'alias "ll=ls -al"' >> ~/.bashrc
 
+# Allows the edits made to the defualt .htaccess file to work
+RUN a2enmod rewrite
+
 WORKDIR /var/www
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
