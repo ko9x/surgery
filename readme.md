@@ -24,7 +24,7 @@
 * If you add something to the Dockerfile you need to build it again with this command:
     * `docker compose up -d --build`
         * If the container goes into a restart loop after the build you may need to change the db volume in the docker-compose.yml
-            * The volume is cutin-db2 at the time this note was added
+            * I haven't had an issue with this since changing to mysql from postgres
 
 * To see the route list, ssh into the php-apache container using `docker exec -it php-apache bash`
     * Then run this command `php artisan route:list`
@@ -38,6 +38,13 @@
                         * `SELECT * FROM items;`
 
 ### Notes
+
+* To get the api to accept requests from Postman I had to edit the .htaccess file
+    * Changed this line `RewriteRule ^ index.php [L]`
+        * To this `RewriteRule ^(.*)$ /index.php/$1 [L,QSA]`
+            * I also added this line to the Dockerfile
+                * `RUN a2enmod rewrite`
+                    * This turns on mods which allows the changes made to the .htaccess file to work
 
 * To set up most of this project I followed this tutorial
     * https://www.twilio.com/blog/get-started-docker-laravel
