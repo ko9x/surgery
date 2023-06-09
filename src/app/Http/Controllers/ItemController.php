@@ -8,7 +8,7 @@ use App\Models\Item;
 class ItemController extends Controller
 {
 
-    function checkRequest(Request $request) {
+    function store(Request $request) {
 
         $data = $request->all();
 
