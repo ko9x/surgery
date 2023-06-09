@@ -28,6 +28,11 @@
 
 * To see the route list, ssh into the php-apache container using `docker exec -it php-apache bash`
     * Then run this command `php artisan route:list`
+
+* To do a console log or infoLog in Laravel you use this syntax `\Log::info('This is the RegisterController', [$user]);`
+    * You will note that the first argument is a string but the second argument is a variable wrapped in square brackets. This is because laravel expects that second argument to be an array.
+    * To view your infoLog navigate to storage/logs/laravel.log
+        * This file will update when you hit an endpoint that causes your infoLog to run.
             
 * If I switch back to postgres for some reason this was a useful command so I wanted to keep it somewhere
     * To ssh into the database docker container, navigate to the root directory of this project in terminal and run this command:
