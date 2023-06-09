@@ -1,7 +1,4 @@
 ### Current Focus
-* Use Postman to add some data to the item table
-    * This will require setting up the ItemController to interact with the table
-        * Currently it just has some functions we wrote to test stuff with Postman
 * Create BreakPointController
 * Set up the database tables
     * The items table has already been created and I think it should work as is
@@ -31,3 +28,6 @@
     * `Answer:` http://localhost:8080/
         * For example: If you want to hit the ItemController its `http://localhost:8080/api/item`
             * The route list command tells you the `api/item` 
+* Use Postman to add some data to the item table
+    * This will require setting up the ItemController to interact with the table
+        * Currently it just has some functions we wrote to test stuff with Postman
