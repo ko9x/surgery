@@ -24,6 +24,17 @@ class ItemController extends Controller
         }
     }
 
+    function show($id) {
+        $item = Item::find($id);
+
+        if (!$item) {
+            return response()->json(['success' => true, 'error' => 'Item not found' ]);
+        } else {
+            return response()->json(['success' => true, 'item' => $item ]);
+        }
+
+    }
+
     function add() {
         return ["result"=>"add worked!"];
     }
