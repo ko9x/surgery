@@ -3,6 +3,8 @@
 * Set up the database tables
     * The items table has already been created and I think it should work as is
     * The break-points table still needs to be created
+        * We need to add the relation ship between the items and the breakpoints to their models
+            * Refer to the NoteWorty laravel project to see how this is done
 * Set up endpoints
     * we need to be able to hit an endpoint with an object and have all the data get placed in the correct portion of the database
 * Figure out how to hit an endpoint and see the database information in the response object on the front-end
