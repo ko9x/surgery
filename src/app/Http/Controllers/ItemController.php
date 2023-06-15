@@ -36,9 +36,9 @@ class ItemController extends Controller
     }
 
     function add() {
-        return ["result"=>"add worked!"];
+        return ["result"=>"add item worked!"];
     }
     function try() {
-        return ["result"=>"try worked!"];
+        return ["result"=>"try item worked!"];
     }
 }

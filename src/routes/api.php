@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\RangeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post("item", [ItemController::class, 'store']);
 
+Route::post("item/add",[ItemController::class, 'add']);
+
+Route::get("item/try",[ItemController::class, 'try']);
+
 Route::get("item/{id}", [ItemController::class, 'show']);
 
-Route::post("add",[ItemController::class, 'add']);
+Route::post("range/add",[RangeController::class, 'add']);
 
-Route::get("try",[ItemController::class, 'try']);
+Route::get("range/try",[RangeController::class, 'try']);
 
