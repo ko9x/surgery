@@ -5,16 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Item extends Model
+class Range extends Model
 {
     use HasFactory;
 
-    public function ranges() {
-        return $this->hasMany(Range::class);
+    public function item() {
+        return $this->belongsTo(Item::class);
     }
 
     protected $fillable = [
+        'item_id',
         'name',
-        'creator',
+        'starts_at',
+        'ends_at',
+        'details',
     ];
 }
