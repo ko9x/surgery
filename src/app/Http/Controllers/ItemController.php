@@ -27,6 +27,13 @@ class ItemController extends Controller
     function show($id) {
         $item = Item::find($id);
 
+        if( !$item ){
+            return response()->json(['success' => false, 'error' => 'No item found.' ]);
+        }
+
+        //Call ranges on item to make sure they're included on the item object in the response
+        $item->ranges;
+
         if (!$item) {
             return response()->json(['success' => true, 'error' => 'Item not found' ]);
         } else {

@@ -20,21 +20,29 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// ItemController routes
+// ItemController routes *********************************************************************
+// Store the item in the items table
 Route::post("item", [ItemController::class, 'store']);
 
+// This is just a test function that should be deleted from here and the ItemController eventually
 Route::post("item/add",[ItemController::class, 'add']);
 
+// This is just a test function that should be deleted from here and the ItemController eventually
 Route::get("item/try",[ItemController::class, 'try']);
 
+// Get the item by id from the item table. We also grab all the ranges with that item_id
 Route::get("item/{id}", [ItemController::class, 'show']);
 
-// RangeController routes
+// RangeController routes *********************************************************************
+// Store the range in the ranges table. We pass the item_id so it can be added to the item_id column in the ranges table
 Route::post("item/{item_id}/range", [RangeController::class, 'store']);
 
+// This is just a test function that should be deleted from here and the RangeController eventually
 Route::post("range/add",[RangeController::class, 'add']);
 
+// This is just a test function that should be deleted from here and the RangeController eventually
 Route::get("range/try",[RangeController::class, 'try']);
 
-Route::get("item/{id}", [RangeController::class, 'show']);
+// Get all the ranges that have the same item_id as the one we pass in the url
+Route::get("item/{id}/range", [RangeController::class, 'show']);
 

@@ -7,6 +7,7 @@ use App\Models\Range;
 
 class RangeController extends Controller
 {
+
     function store(Request $request, $item_id) {
         $data = $request->all();
 
@@ -25,17 +26,18 @@ class RangeController extends Controller
         }
     }
 
-    // Can probably delete this. I can't think of a reason to show this without including the item it is associated with
-    // function show($id) {
-    //     $range = Range::find($id);
+    // This is the function that gets called when we run $item->ranges; in the show function in the ItemController
+    function show($id) {
+        // Grab all the ranges where the item_id matches the id passed in the request url
+        $ranges = Range::where('item_id', $id)->get();
 
-    //     if (!$range) {
-    //         return response()->json(['success' => true, 'error' => 'range not found' ]);
-    //     } else {
-    //         return response()->json(['success' => true, 'range' => $range ]);
-    //     }
+        if (!$ranges) {
+            return response()->json(['success' => true, 'error' => 'range not found' ]);
+        } else {
+            return response()->json(['success' => true, 'ranges' => $ranges ]);
+        }
 
-    // }
+    }
 
     function add() {
         return ["result"=>"add range worked!"];
