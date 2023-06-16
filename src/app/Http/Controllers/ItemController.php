@@ -8,6 +8,22 @@ use App\Models\Item;
 class ItemController extends Controller
 {
 
+    function index(Request $request, $name) {
+        // $data = $request->all();
+
+        $items = Item::all();
+
+        foreach ($items as $item) {
+            $item->ranges;
+        }
+
+        if (!$items) {
+            return response()->json(['success' => true, 'error' => 'Items not found' ]);
+        } else {
+            return response()->json(['success' => true, 'items' => $items, 'name' => $name ]);
+        }
+    }
+
     function store(Request $request) {
 
         $data = $request->all();
@@ -24,6 +40,7 @@ class ItemController extends Controller
         }
     }
 
+    // We don't use this function. We use the index function so we grab all the items not just a single one.
     function show($id) {
         $item = Item::find($id);
 

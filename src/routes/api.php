@@ -24,14 +24,18 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Store the item in the items table
 Route::post("item", [ItemController::class, 'store']);
 
+// Get all the items in the items table. Also grab all the ranges that have the same config name
+Route::get("item/{name}", [ItemController::class, 'index']);
+
 // This is just a test function that should be deleted from here and the ItemController eventually
 Route::post("item/add",[ItemController::class, 'add']);
 
 // This is just a test function that should be deleted from here and the ItemController eventually
 Route::get("item/try",[ItemController::class, 'try']);
 
-// Get the item by id from the item table. We also grab all the ranges with that item_id
-Route::get("item/{id}", [ItemController::class, 'show']);
+// Get an item by id from the item table. We also grab all the ranges with that item_id
+// We don't really need this and the route conflicts with the index that we do need to use
+// Route::get("item/{id}", [ItemController::class, 'show']);
 
 // RangeController routes *********************************************************************
 // Store the range in the ranges table. We pass the item_id so it can be added to the item_id column in the ranges table
