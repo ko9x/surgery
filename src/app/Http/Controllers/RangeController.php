@@ -8,21 +8,20 @@ use App\Models\Range;
 class RangeController extends Controller
 {
 
-    function store(Request $request, $item_id) {
-        $data = $request->all();
+    public static function store(array $request, $item_id) {
 
         $range = Range::create([
             'item_id' => $item_id,
-            'name' => $data['name'],
-            'starts_at' => $data['starts_at'],
-            'ends_at' => $data['ends_at'],
-            'details' => $data['details']
+            'name' => $request['name'],
+            'starts_at' => $request['starts_at'],
+            'ends_at' => $request['ends_at'],
+            'details' => $request['details']
         ]);
 
         if (!$range) {
-            return response()->json(['success' => true, 'error' => 'range not created' ]);
+            return false;
         } else {
-            return response()->json(['success' => true, 'range' => $range ]);
+            return $range;
         }
     }
 

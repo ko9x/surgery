@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Item;
+use App\Http\Controllers\RangeController;
 
 class ItemController extends Controller
 {
@@ -23,7 +24,7 @@ class ItemController extends Controller
         if (!$items) {
             return response()->json(['success' => true, 'error' => 'Items not found' ]);
         } else {
-            return response()->json(['success' => true, 'items' => $items, 'name' => $name ]);
+            return response()->json(['success' => true, 'items' => $items]);
         }
     }
 
@@ -36,10 +37,17 @@ class ItemController extends Controller
             'creator' => $data['creator']
         ]);
 
+        $ranges = $data['ranges'];
+        $itemId = $item->id;
+
+        foreach ($ranges as $range) {
+            $range = RangeController::store($range, $itemId);
+        }
+
         if (!$item) {
             return response()->json(['success' => true, 'error' => 'Item not created' ]);
         } else {
-            return response()->json(['success' => true, 'item' => $item ]);
+            return response()->json(['success' => true, 'item' => $item, 'ranges' => $ranges ]);
         }
     }
 
