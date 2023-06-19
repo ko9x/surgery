@@ -1,11 +1,10 @@
 ### Current Focus
-* Figure out how to attach the endpoint with the correct item_id AND name to the correct item object
-* Set up endpoints
-    * We need to be able to hit an endpoint with an object and have all the data get placed in the correct portion of the database
-    * Create an endpoint where we get all the items and an array of ranges where the config name matches the config passed in
-        * The array of ranges should be attached to each item
-            * So {items: {id: 1, ranges: []}, {id:2, ranges: []}} etc...
-    * Figure out how to hit an endpoint and see the database information in the response object on the front-end
+* Continue working on connecting the frontend to the endpoint
+* We need to make sure every item has ranges for every config name
+    * Make sure the ranges cover the entire range of the config from XX00001 to TX99999
+        * We should prevent the user submitting the form unless all the data is correct
+            * We should also ensure the data is correct before storing the information in the database. 
+* Figure out how to hit an endpoint and see the database information in the response object on the front-end
 * Test out sanctum/csrf-cookie route?
     * Not exaclty sure what this is
 * Cleanup all unused routes and functions
@@ -36,3 +35,8 @@
     * The break-points table still needs to be created
         * We need to add the relationship between the items and the breakpoints to their models
             * Refer to the NoteWorty laravel project to see how this is done
+* Figure out how to attach the range with the correct item.id AND name to the correct item object
+* Create an endpoint where we get all the items and an array of ranges where the config name matches the config passed in
+        * The array of ranges should be attached to each item
+            * So {items: {id: 1, ranges: []}, {id:2, ranges: []}} etc...
+* We need to be able to hit an endpoint with an object and have all the data get placed in the correct portion of the database
