@@ -3,18 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Item;
 
 class ItemController extends Controller
 {
 
     function index(Request $request, $name) {
-        // $data = $request->all();
-
         $items = Item::all();
 
+        // For each item, grab the ranges that match that $item.id and also match the $name passed in the url
         foreach ($items as $item) {
-            $item->ranges;
+            $item->ranges = DB::table('ranges')
+                ->where('name', '=', $name)
+                ->where('item_id', '=', $item->id)
+                ->get();
         }
 
         if (!$items) {
