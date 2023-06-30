@@ -70,6 +70,7 @@ class ItemController extends Controller
 
     }
 
+    // These are just test functions to make sure the route is working
     function add() {
         return ["result"=>"add item worked!"];
     }
