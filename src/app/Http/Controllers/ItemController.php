@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Item;
 use App\Http\Controllers\RangeController;
+use App\Http\Controllers\ExceptionController;
 
 class ItemController extends Controller
 {
@@ -16,6 +17,13 @@ class ItemController extends Controller
         // For each item, grab the ranges that match that $item.id and also match the $name passed in the url
         foreach ($items as $item) {
             $item->ranges = DB::table('ranges')
+                ->where('name', '=', $name)
+                ->where('item_id', '=', $item->id)
+                ->get();
+        }
+
+        foreach ($items as $item) {
+            $item->exceptions = DB::table('exceptions')
                 ->where('name', '=', $name)
                 ->where('item_id', '=', $item->id)
                 ->get();
@@ -38,16 +46,21 @@ class ItemController extends Controller
         ]);
 
         $ranges = $data['ranges'];
+        $exceptions = $data['exceptions'];
         $itemId = $item->id;
 
         foreach ($ranges as $range) {
             $range = RangeController::store($range, $itemId);
         }
 
+        foreach ($exceptions as $exception) {
+            $exception = ExceptionController::store($exception, $itemId);
+        }
+
         if (!$item) {
             return response()->json(['success' => true, 'error' => 'Item not created' ]);
         } else {
-            return response()->json(['success' => true, 'item' => $item, 'ranges' => $ranges ]);
+            return response()->json(['success' => true, 'item' => $item, 'ranges' => $ranges, 'exceptions' => $exceptions ]);
         }
     }
 

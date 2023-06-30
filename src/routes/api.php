@@ -55,9 +55,6 @@ Route::get("item/{id}/range", [RangeController::class, 'show']);
 // Store the exception in the exceptions table. We pass the item_id so it can be added to the item_id column in the exceptions table
 Route::post("item/{item_id}/exception", [ExceptionController::class, 'store']);
 
-// This is a test store route for just an exception with a hard coded item_id. This route should be deleted after testing
-Route::post("exception", [ExceptionController::class, 'store']);
-
 // This is just a route for a test function 
 Route::get("exception/try",[ExceptionController::class, 'try']);
 
