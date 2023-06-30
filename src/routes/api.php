@@ -28,10 +28,10 @@ Route::post("item", [ItemController::class, 'store']);
 // Get all the items in the items table. Also grab all the ranges that have the same config name
 Route::get("item/{name}", [ItemController::class, 'index']);
 
-// This is just a test function 
+// This is just a route for a test function 
 Route::post("item/add",[ItemController::class, 'add']);
 
-// This is just a test function 
+// This is just a route for a test function 
 Route::get("item/try",[ItemController::class, 'try']);
 
 // Get an item by id from the item table. We also grab all the ranges with that item_id
@@ -42,14 +42,22 @@ Route::get("item/try",[ItemController::class, 'try']);
 // Store the range in the ranges table. We pass the item_id so it can be added to the item_id column in the ranges table
 Route::post("item/{item_id}/range", [RangeController::class, 'store']);
 
-// This is just a test function 
+// This is just a route for a test function 
 Route::post("range/add",[RangeController::class, 'add']);
 
-// This is just a test function 
+// This is just a route for a test function 
 Route::get("range/try",[RangeController::class, 'try']);
 
 // Get all the ranges that have the same item_id as the one we pass in the url
 Route::get("item/{id}/range", [RangeController::class, 'show']);
 
 // ExceptionController routes *********************************************************************
+// Store the exception in the exceptions table. We pass the item_id so it can be added to the item_id column in the exceptions table
+Route::post("item/{item_id}/exception", [ExceptionController::class, 'store']);
+
+// This is a test store route for just an exception with a hard coded item_id. This route should be deleted after testing
+Route::post("exception", [ExceptionController::class, 'store']);
+
+// This is just a route for a test function 
 Route::get("exception/try",[ExceptionController::class, 'try']);
+
