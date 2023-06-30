@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\RangeController;
+use App\Http\Controllers\ExceptionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,3 +51,5 @@ Route::get("range/try",[RangeController::class, 'try']);
 // Get all the ranges that have the same item_id as the one we pass in the url
 Route::get("item/{id}/range", [RangeController::class, 'show']);
 
+// ExceptionController routes *********************************************************************
+Route::get("exception/try",[ExceptionController::class, 'try']);
