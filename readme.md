@@ -50,7 +50,7 @@
 
 * To set up most of this project I followed this tutorial
     * https://www.twilio.com/blog/get-started-docker-laravel
-
+    
 * Since we didn't specify a username in our docker-compose.yml file the database username is "postgres"
     * We did however, specify a password in the docker-compose.yml
 

@@ -4,15 +4,12 @@
     * Make sure the ranges cover the entire range of the config from XX00001 to TX99999
         * We should prevent the user submitting the form unless all the data is correct
             * We should also ensure the data is correct before storing the information in the database. 
-* Figure out how to hit an endpoint and see the database information in the response object on the front-end
-* Test out sanctum/csrf-cookie route?
-    * Not exaclty sure what this is
+
+### What to do later
 * Cleanup all unused routes and functions
     * Or at least comment them so we know why they are there
-
-* Continue following the tutorial as necessary
-    * https://www.twilio.com/blog/get-started-docker-laravel
-        * I already created the ItemController but there will be stuff we reference going forward
+* Test out sanctum/csrf-cookie route?
+    * Not exaclty sure what this is
 
 ### Done
 * Track this project with GitHub!
@@ -40,3 +37,6 @@
         * The array of ranges should be attached to each item
             * So {items: {id: 1, ranges: []}, {id:2, ranges: []}} etc...
 * We need to be able to hit an endpoint with an object and have all the data get placed in the correct portion of the database
+* Create exceptions table
+    * Make sure it is added as part of the object that is sent to the front end
+* Figure out how to hit an endpoint and see the database information in the response object on the front-end
