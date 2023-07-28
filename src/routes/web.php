@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+Route::get('/form', function () {
+    return view('itemForm');
+});
+
 Route::get('/', function () {
     return view('information');
 });
