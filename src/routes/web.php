@@ -13,11 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/form', function () {
+Route::get('/itemForm', function () {
     return view('itemForm');
 });
 

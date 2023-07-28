@@ -14,32 +14,7 @@
   </head>
   <body>
     <div class="container" id="container">
-      <!-- <button id="toggleView" class="viewButton">View</button>
-      <div id="informationSection" class="informationSection" hidden>
-        <div id="titleSection" class="titleSection">
-          <div id="titleText"></div>
-          <div id="subTitleText"></div>
-          <div id="disclaimerText"></div>
-        </div>
-        <div id="searchSection" class="searchSection">
-          <input
-            id="searchItem"
-            type="search"
-            placeholder="Enter Serial Number"
-          />
-          <button id="executeSearch" type="button">Search</button>
-        </div>
-        <div class="resultSectionContainer" id="resultSectionContainer" hidden>
-          <div id="resultSection" class="resultSection">
-            <div class="topResultItemContainer">
-              <h3 id="topResultLabel"></h3>
-              <div class="topResultContent" id="topResultContent"></div>
-            </div>
-            <h3 id="bottomResultsTitle"></h3>
-            <div class="bottomResultContainer" id="bottomResultContainer"></div>
-          </div>
-        </div>
-      </div> -->
+    <a href="http://localhost:8080">information</a>
       <div class="formSection" id="formSection">
         <form id="itemForm">
           <div class="rangeContainer" style="margin: 0 auto" id="itemInfo">
@@ -1134,6 +1109,6 @@
         </form>
       </div>
     </div>
-    <script src="{{url('js/main.js')}}" defer type="module"></script>
+    <script src="{{url('js/itemForm.js')}}" defer type="module"></script>
   </body>
 </html>

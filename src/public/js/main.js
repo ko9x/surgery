@@ -1,3 +1,5 @@
+// The javascript was split between a few different files so this file is no longer used. Keeping it just in case for now.
+
 import { getItems, storeItem } from "./APIService.js";
 
 const container = document.getElementById("container");
