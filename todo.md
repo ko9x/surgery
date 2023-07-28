@@ -1,9 +1,13 @@
 ### Current Focus
-* Continue working on connecting the frontend to the endpoint
-* We need to make sure every item has ranges for every config name
-    * Make sure the ranges cover the entire range of the config from XX00001 to TX99999
-        * We should prevent the user submitting the form unless all the data is correct
-            * We should also ensure the data is correct before storing the information in the database. 
+* Make a login form
+    * Once the user is logged in they will have access to the information view, the itemForm view and the removeItem view
+        * Make a header so we can switch between them quickly and easily
+* Make a removeItem view
+    * Make sure removing an item removes all the associated ranges and exceptions
+* Secure the route to the itemForm and the RemoveItem view
+* Validate the item information here on the backend before storing it to the database
+    * Make all the ranges are covered and that sort of thing
+* Fix the styling for small screens for all views
 
 ### What to do later
 * Cleanup all unused routes and functions
@@ -40,3 +44,13 @@
 * Create exceptions table
     * Make sure it is added as part of the object that is sent to the front end
 * Figure out how to hit an endpoint and see the database information in the response object on the front-end
+* Continue working on connecting the frontend to the endpoint
+* We need to make sure every item has ranges for every config name
+    * Make sure the ranges cover the entire range of the config from XX00001 to TX99999
+        * We should prevent the user submitting the form unless all the data is correct
+* Separate the information view js and the form view js into seprate js files
+    * Make a third js file with all the stuff both views can share
+        * Then import that stuff into each file as needed
+* Remove all the information view stuff from the itemForm blade
+* Remove all the itemForm view stuff from the information blade
+            
