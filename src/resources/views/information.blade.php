@@ -9,7 +9,7 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link href="default.css" rel="stylesheet" type="text/css" />
+    <link href="{{url('css/default.css')}}" rel="stylesheet" type="text/css" />
     <title>Elite System Information</title>
   </head>
   <body>
@@ -1134,6 +1134,6 @@
         </form>
       </div>
     </div>
-    <script src="main.js" defer type="module"></script>
+    <script src="{{url('js/main.js')}}" defer type="module"></script>
   </body>
 </html>
