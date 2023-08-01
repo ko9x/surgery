@@ -1,13 +1,28 @@
 ### Current Focus
+* Continue working on the removeItem view
+* Make a removeItem view
+    * (done) Create a function in the APIService that will return the name of all the items in the database
+        * (done) Run the createBottomResultsArea function for each item that is returned
+            * (done) Add a button to each item that will return the item id
+    * Create a function in the APIService that will send the id of the selected item to the backend to be removed
+    * Make sure removing an item removes all the associated ranges and exceptions
+    * Show a confirm popup that tells the user that removing an item cannot be undone
+        * If confirmed show an alert saying the item has been removed
+            * Say the name of the item in the alert?
+* The information page will be the default page with a button that says "Login"
+    * Once a user is logged in that button will change to say "maintenance"
+        * The maintenance menu default is the itemForm. Have a button to go to information and one for remove item view
 * Make a login form
     * Once the user is logged in they will have access to the information view, the itemForm view and the removeItem view
-        * Make a header so we can switch between them quickly and easily
-* Make a removeItem view
-    * Make sure removing an item removes all the associated ranges and exceptions
 * Secure the route to the itemForm and the RemoveItem view
 * Validate the item information here on the backend before storing it to the database
     * Make all the ranges are covered and that sort of thing
-* Fix the styling for small screens for all views
+* Fix the styling and functionality for small screens for all views
+    * The manage items view user a hover to show the buttons for desktop.
+        * We will need to check if the user is on mobile and then add a click listener instead
+    * The links to go to the other pages don't work on mobile because they use localhost not the ip address
+        * The database also cannot be accessed on mobile because the api uses localhost not the ip address
+            * This won't be an issue once the app is on the server
 
 ### What to do later
 * Cleanup all unused routes and functions
