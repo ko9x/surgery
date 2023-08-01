@@ -92,7 +92,7 @@ export function handleLayout(userTitle, userSubtitle, userDisclaimer) {
     }
 }
 
-export function createBottomResultsArea(titleText, labelText, contentText) {
+export function createBottomResultsArea(titleText, labelText, contentText, id) {
     let bottomResultContainer = document.getElementById(
         "bottomResultContainer"
     );
@@ -108,5 +108,8 @@ export function createBottomResultsArea(titleText, labelText, contentText) {
     bottomResultContent.innerText = contentText;
     bottomResultItemContainer.appendChild(bottomResultLabel);
     bottomResultItemContainer.appendChild(bottomResultContent);
+    if(typeof id !== 'undefined') {
+        bottomResultItemContainer.setAttribute("id", id);
+    }
     bottomResultContainer.appendChild(bottomResultItemContainer);
 }
