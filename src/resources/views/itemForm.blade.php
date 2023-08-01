@@ -15,7 +15,7 @@
   <body>
     <div class="container" id="container">
     <a href="http://localhost:8080">information</a>
-    <a href="http://localhost:8080/removeItem">remove item</a>
+    <a href="http://localhost:8080/manageItems">remove item</a>
       <div class="formSection" id="formSection">
         <form id="itemForm">
           <div class="rangeContainer" style="margin: 0 auto" id="itemInfo">

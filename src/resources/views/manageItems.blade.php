@@ -34,6 +34,6 @@
         </div>
       </div>
     </div>
-    <script src="{{url('js/removeItem.js')}}" defer type="module"></script>
+    <script src="{{url('js/manageItems.js')}}" defer type="module"></script>
   </body>
 </html>
