@@ -17,6 +17,10 @@ Route::get('/itemForm', function () {
     return view('itemForm');
 });
 
+Route::get('/removeItem', function () {
+    return view('removeItem');
+});
+
 Route::get('/', function () {
     return view('information');
 });

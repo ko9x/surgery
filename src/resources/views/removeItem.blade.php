@@ -10,17 +10,17 @@
       type="text/css"
     />
     <link href="{{url('css/default.css')}}" rel="stylesheet" type="text/css" />
-    <title>Elite System Information</title>
+    <title>Remove Item From Database</title>
   </head>
   <body>
     <div class="container" id="container">
-      <a href="http://localhost:8080/itemForm">item form</a>
-      <a href="http://localhost:8080/removeItem">remove item</a>
+    <a href="http://localhost:8080/itemForm">item form</a>
+      <a href="http://localhost:8080">information</a>
       <div id="informationSection" class="informationSection" hidden>
         <div id="titleSection" class="titleSection">
           <div id="titleText"></div>
           <div id="subTitleText"></div>
-          <div id="disclaimerText"></div>
+          <!-- <div id="disclaimerText"></div> -->
         </div>
         <div id="searchSection" class="searchSection">
           <input

@@ -10,11 +10,12 @@
       type="text/css"
     />
     <link href="{{url('css/default.css')}}" rel="stylesheet" type="text/css" />
-    <title>Elite System Information</title>
+    <title>Add Item To Database</title>
   </head>
   <body>
     <div class="container" id="container">
     <a href="http://localhost:8080">information</a>
+    <a href="http://localhost:8080/removeItem">remove item</a>
       <div class="formSection" id="formSection">
         <form id="itemForm">
           <div class="rangeContainer" style="margin: 0 auto" id="itemInfo">
