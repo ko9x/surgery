@@ -91,3 +91,22 @@ export function handleLayout(userTitle, userSubtitle, userDisclaimer) {
         disclaimerText.innerHTML = `<p>${userDisclaimer}</p>`;
     }
 }
+
+export function createBottomResultsArea(titleText, labelText, contentText) {
+    let bottomResultContainer = document.getElementById(
+        "bottomResultContainer"
+    );
+    let bottomResultsTitle = document.getElementById("bottomResultsTitle");
+    bottomResultsTitle.innerHTML = titleText;
+    let bottomResultItemContainer = document.createElement("div");
+    bottomResultItemContainer.classList.add("bottomResultItemContainer");
+    let bottomResultLabel = document.createElement("h3");
+    bottomResultLabel.classList.add("bottomResultLabel");
+    bottomResultLabel.innerText = labelText;
+    let bottomResultContent = document.createElement("div");
+    bottomResultContent.classList.add("bottomResultContent");
+    bottomResultContent.innerText = contentText;
+    bottomResultItemContainer.appendChild(bottomResultLabel);
+    bottomResultItemContainer.appendChild(bottomResultContent);
+    bottomResultContainer.appendChild(bottomResultItemContainer);
+}

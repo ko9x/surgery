@@ -1,5 +1,5 @@
 import { getItems } from "./APIService.js";
-import { isSmall, configs, handleLayout } from "./common.js";
+import { isSmall, configs, handleLayout, createBottomResultsArea } from "./common.js";
 
 const informationSection = document.getElementById("informationSection");
 const titleText = document.getElementById("titleText");
@@ -97,25 +97,6 @@ function validateSerialNumber() {
     } else {
         displayError();
     }
-}
-
-function createBottomResultsArea(titleText, labelText, contentText) {
-    let bottomResultContainer = document.getElementById(
-        "bottomResultContainer"
-    );
-    let bottomResultsTitle = document.getElementById("bottomResultsTitle");
-    bottomResultsTitle.innerHTML = titleText;
-    let bottomResultItemContainer = document.createElement("div");
-    bottomResultItemContainer.classList.add("bottomResultItemContainer");
-    let bottomResultLabel = document.createElement("h3");
-    bottomResultLabel.classList.add("bottomResultLabel");
-    bottomResultLabel.innerText = labelText;
-    let bottomResultContent = document.createElement("div");
-    bottomResultContent.classList.add("bottomResultContent");
-    bottomResultContent.innerText = contentText;
-    bottomResultItemContainer.appendChild(bottomResultLabel);
-    bottomResultItemContainer.appendChild(bottomResultContent);
-    bottomResultContainer.appendChild(bottomResultItemContainer);
 }
 
 // Populate the results section fields with the configuration information
