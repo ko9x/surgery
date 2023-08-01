@@ -1,5 +1,5 @@
 import { getItems } from "./APIService.js";
-import { isSmall, configs } from "./common.js";
+import { isSmall, configs, handleLayout } from "./common.js";
 
 const informationSection = document.getElementById("informationSection");
 const titleText = document.getElementById("titleText");
@@ -15,7 +15,11 @@ const topResultLabel = document.getElementById("topResultLabel");
 const topResultContent = document.getElementById("topResultContent");
 
 hideResultsSection();
-handleLayout();
+handleLayout(
+    "Elite System Information",
+    "Find configuration information using the System Serial Number",
+    "System information is for reference only. Configuration changes and upgrades made since the date of manufacture are not tracked by this database"
+    );
 
 //  Event Listeners Section  ********************************************************************
 
@@ -42,31 +46,6 @@ executeSearch.addEventListener("click", async () => {
         flashSearchButton();
     }
 });
-
-// Handle layout based on the screen size
-function handleLayout() {
-    const titleTextDescription = "Elite System Information";
-    const subTitleTextDescription =
-        "Find configuration information using the System Serial Number";
-    const disclaimerTextDescription =
-        "System information is for reference only. Configuration changes and upgrades made since the date of manufacture are not tracked by this database";
-    if (!isSmall) {
-        container.classList.add("largeContainer");
-        titleSection.classList.add("largeTitleSection");
-        searchSection.classList.add("largeSearchSection");
-        resultSection.classList.add("largeResultSection");
-        titleText.innerHTML = `<h1>${titleTextDescription}</h1>`;
-        subTitleText.innerHTML = `<h3>${subTitleTextDescription}</h3>`;
-        disclaimerText.innerHTML = `<p>${disclaimerTextDescription}</p>`;
-    }
-    if (isSmall) {
-        container.classList.add("smallContainer");
-        executeSearch.classList.add("smallButton");
-        titleText.innerHTML = `<h3>${titleTextDescription}</h3>`;
-        subTitleText.innerHTML = `<p>${subTitleTextDescription}</p>`;
-        disclaimerText.innerHTML = `<p>${disclaimerTextDescription}</p>`;
-    }
-}
 
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {

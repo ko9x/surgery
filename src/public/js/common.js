@@ -67,3 +67,27 @@ const height =
 
 // Create a variable to differentiate between large and small screens
 export const isSmall = width < 750;
+
+// Handle layout based on the screen size
+export function handleLayout(userTitle, userSubtitle, userDisclaimer) {
+    if (!isSmall) {
+        container.classList.add("largeContainer");
+        titleSection.classList.add("largeTitleSection");
+        if(typeof searchSection !== 'undefined') {
+            searchSection.classList.add("largeSearchSection");
+        }
+        resultSection.classList.add("largeResultSection");
+        titleText.innerHTML = `<h1>${userTitle}</h1>`;
+        subTitleText.innerHTML = `<h3>${userSubtitle}</h3>`;
+        disclaimerText.innerHTML = `<p>${userDisclaimer}</p>`;
+    }
+    if (isSmall) {
+        container.classList.add("smallContainer");
+        if(typeof executeSearch !== 'undefined') {
+            executeSearch?.classList.add("smallButton");
+        }
+        titleText.innerHTML = `<h3>${userTitle}</h3>`;
+        subTitleText.innerHTML = `<p>${userSubtitle}</p>`;
+        disclaimerText.innerHTML = `<p>${userDisclaimer}</p>`;
+    }
+}
