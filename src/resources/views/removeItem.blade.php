@@ -16,21 +16,13 @@
     <div class="container" id="container">
     <a href="http://localhost:8080/itemForm">item form</a>
       <a href="http://localhost:8080">information</a>
-      <div id="informationSection" class="informationSection" hidden>
+      <div id="informationSection" class="informationSection">
         <div id="titleSection" class="titleSection">
           <div id="titleText"></div>
           <div id="subTitleText"></div>
-          <!-- <div id="disclaimerText"></div> -->
+          <div id="disclaimerText"></div>
         </div>
-        <div id="searchSection" class="searchSection">
-          <input
-            id="searchItem"
-            type="search"
-            placeholder="Enter Serial Number"
-          />
-          <button id="executeSearch" type="button">Search</button>
-        </div>
-        <div class="resultSectionContainer" id="resultSectionContainer" hidden>
+        <div class="resultSectionContainer" id="resultSectionContainer">
           <div id="resultSection" class="resultSection">
             <div class="topResultItemContainer">
               <h3 id="topResultLabel"></h3>
@@ -42,6 +34,6 @@
         </div>
       </div>
     </div>
-    <script src="{{url('js/information.js')}}" defer type="module"></script>
+    <script src="{{url('js/removeItem.js')}}" defer type="module"></script>
   </body>
 </html>
