@@ -1,11 +1,21 @@
 // API using localhost
-const API = 'http://localhost:8080/api/item'
+const API = 'http://localhost:8080/api'
 
 // API using MacBook IP Address (So I can test on my iphone)
-// const API = 'http://192.168.0.17:8080/api/item'
+// const API = 'http://192.168.0.17:8080/api'
+
+export async function getAllItems() {
+    let response = await fetch(`${API}/items`);
+
+    let data = await response.json();
+
+    if(data?.success) {
+        return data.items;
+    }
+}
 
 export async function getItems(config) {
-    let response = await fetch(`${API}/${config}`);
+    let response = await fetch(`${API}/item/${config}`);
 
     let data = await response.json();
 
@@ -15,7 +25,7 @@ export async function getItems(config) {
 }
 
 export async function storeItem(data) {
-    let response = await fetch(`${API}`, {
+    let response = await fetch(`${API}/item`, {
         method: "POST",
         headers: {
             'Accept': 'application/json',

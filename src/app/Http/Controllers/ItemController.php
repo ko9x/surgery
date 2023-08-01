@@ -11,6 +11,16 @@ use App\Http\Controllers\ExceptionController;
 class ItemController extends Controller
 {
 
+    function allItems(Request $request) {
+        $items = Item::all();
+
+        if (!$items) {
+            return response()->json(['success' => true, 'error' => 'Items not found' ]);
+        } else {
+            return response()->json(['success' => true, 'items' => $items]);
+        }
+    }
+
     function index(Request $request, $name) {
         $items = Item::all();
 

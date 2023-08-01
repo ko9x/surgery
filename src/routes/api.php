@@ -25,7 +25,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Store the item in the items table
 Route::post("item", [ItemController::class, 'store']);
 
-// Get all the items in the items table. Also grab all the ranges that have the same config name
+// Get all the items in the items table
+Route::get("items", [ItemController::class, 'allItems']);
+
+// Get all the items in the items table for a specific configuration. Also grab all the ranges that have the same config name
 Route::get("item/{name}", [ItemController::class, 'index']);
 
 // This is just a route for a test function 
