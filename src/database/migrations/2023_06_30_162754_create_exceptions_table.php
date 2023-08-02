@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('exceptions');
         Schema::create('exceptions', function (Blueprint $table) {
             $table->id();
             $table->integer('item_id');
