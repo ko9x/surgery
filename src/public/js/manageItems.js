@@ -41,6 +41,9 @@ for (var i = 0; i < bottomResultContainer.length; i++) {
                 editItemButton.addEventListener('click', (e) => {
                     let itemId = e.target.parentNode.parentNode.id;
                     let newName = prompt("Please enter a new name for the item");
+                    if(newName === null) {
+                        return;
+                    }
                     if(newName && newName.length > 7) {
                         editItem(itemId, {name: newName});
                     } else {
