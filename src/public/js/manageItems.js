@@ -25,10 +25,10 @@ for (var i = 0; i < bottomResultContainer.length; i++) {
             // Create the buttonContainer and append the buttons
             let buttonContainer = document.createElement('div');
             let editItemButton = document.createElement("button");
-            editItemButton.setAttribute('name', 'editItemButton')
+            editItemButton.setAttribute('name', 'editItemButton');
             editItemButton.innerHTML = "edit item";
             let removeItemButton = document.createElement("button");
-            removeItemButton.setAttribute('name', 'removeItemButton')
+            removeItemButton.setAttribute('name', 'removeItemButton');
             removeItemButton.innerHTML = "remove item";
             buttonContainer.appendChild(editItemButton);
             buttonContainer.appendChild(removeItemButton);
@@ -38,6 +38,12 @@ for (var i = 0; i < bottomResultContainer.length; i++) {
                 // hide the creator SSO and show the button container if the mouse is hovering over the item
                 e.target.childNodes[1].setAttribute('hidden', 'true');
                 e.target.appendChild(buttonContainer);
+                editItemButton.addEventListener('click', (e) => {
+                    let itemId = e.target.parentNode.parentNode.id
+                });
+                removeItemButton.addEventListener('click', (e) => {
+                    let itemId = e.target.parentNode.parentNode.id
+                });
             }
         }
     });
