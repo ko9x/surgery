@@ -34,6 +34,9 @@ Route::get("item/{name}", [ItemController::class, 'index']);
 // Destroy the item matching the id in the path
 Route::delete("item/{id}", [ItemController::class, 'destroy']);
 
+// Edit the item matching the id in the path
+Route::put("item/{id}", [ItemController::class, 'update']);
+
 // This is just a route for a test function 
 Route::post("item/add",[ItemController::class, 'add']);
 

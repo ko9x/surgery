@@ -54,8 +54,29 @@ export async function deleteItem(id) {
     let data = await response.json();
 
     if(data?.success) {
-        alert(`Item ${data.item.name} was removed from the database`);
+        alert(`Item "${data.item.name}" was removed from the database`);
         window.location.reload();
         return data.item;
+    }
+}
+
+export async function editItem(id, data) {
+    let response = await fetch(`${API}/item/${id}`, {
+        method: "PUT",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+
+    const content = await response.json();
+
+    if(content?.success) {
+        alert(`the Item name has been changed to "${content.item.name}"`);
+        window.location.reload();
+        return content.item;
+    } else {
+        alert('Something went wrong');
     }
 }

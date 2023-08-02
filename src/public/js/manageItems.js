@@ -1,4 +1,4 @@
-import { getAllItems, deleteItem } from "./APIService.js";
+import { getAllItems, deleteItem, editItem } from "./APIService.js";
 import { isSmall, handleLayout, createBottomResultsArea } from "./common.js";
 
 const items = await getAllItems();
@@ -40,6 +40,12 @@ for (var i = 0; i < bottomResultContainer.length; i++) {
                 e.target.appendChild(buttonContainer);
                 editItemButton.addEventListener('click', (e) => {
                     let itemId = e.target.parentNode.parentNode.id;
+                    let newName = prompt("Please enter a new name for the item");
+                    if(newName && newName.length > 7) {
+                        editItem(itemId, {name: newName});
+                    } else {
+                        alert('Please enter a valid item name that is at least 7 characters long.')
+                    }
                 });
                 removeItemButton.addEventListener('click', (e) => {
                     let itemId = e.target.parentNode.parentNode.id;

@@ -115,6 +115,21 @@ class ItemController extends Controller
         return response()->json(['success' => true, 'message' => 'item deleted.', 'item' => $item ]);
     }
 
+    public function update(Request $request, $id) {
+        $data = $request->all();
+        $item = item::find( $id );
+
+        if(!$item ){
+            return response()->json(['success' => false, 'error' => 'No item found.' ]);
+        }
+
+        $item->name = $data['name'];
+
+        $item->save();
+
+        return response()->json(['success' => true, 'message' => 'item updated.', 'item' => $item ]);
+    }
+
     // These are just test functions to make sure the route is working
     function add() {
         return ["result"=>"add item worked!"];
