@@ -6,7 +6,7 @@ const items = await getAllItems();
 // Create a bottomResultItemContainer for each item we get back from the database
 for (var i = 0; i < items.length; i++) {
     createBottomResultsArea(
-        "Items",
+        "Item Name and Creator SSO",
         items[i].name,
         items[i].creator,
         items[i].id
