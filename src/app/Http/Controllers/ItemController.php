@@ -100,6 +100,16 @@ class ItemController extends Controller
             return response()->json(['success' => false, 'error' => 'No item found.' ]);
         }
 
+        // Find all the ranges associated with the item delete them
+        $item->ranges = DB::table('ranges')
+            ->where('item_id', '=', $item->id)
+            ->delete();
+
+        // Find all the exceptions associated with the item delete them
+        $item->exceptions = DB::table('exceptions')
+            ->where('item_id', '=', $item->id)
+            ->delete();
+
         $item->delete();
 
         return response()->json(['success' => true, 'message' => 'item deleted.', 'item' => $item ]);
