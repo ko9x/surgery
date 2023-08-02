@@ -43,7 +43,11 @@ for (var i = 0; i < bottomResultContainer.length; i++) {
                 });
                 removeItemButton.addEventListener('click', (e) => {
                     let itemId = e.target.parentNode.parentNode.id;
-                    deleteItem(itemId);
+                    if(confirm('Are you sure? Removing an item from the database cannot be undone.')) {
+                        deleteItem(itemId);
+                    } else {
+                        return;
+                    }
                 });
             }
         }
