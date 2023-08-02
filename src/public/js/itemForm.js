@@ -16,14 +16,14 @@ const watchStartsAt = document.querySelectorAll(".starts_at");
 // Loop over all the ends_at inputs and add an eventListener
 for (var i = 0; i < watchEndsAt.length; i++) {
     watchEndsAt[i].addEventListener("keyup", (e) => {
-        findAndFillSiblingInput(e, "end");
+        findAndFillSiblingInput(e.target, "end");
     });
 }
 
 // Loop over all the starts_at inputs and add an eventListener
 for (var i = 0; i < watchStartsAt.length; i++) {
     watchStartsAt[i].addEventListener("keyup", (e) => {
-        findAndFillSiblingInput(e, "start");
+        findAndFillSiblingInput(e.target, "start");
     });
 }
 
@@ -270,8 +270,7 @@ function userCollapseSection(sectionId) {
 }
 
 // Once the user enters a valid serial number in an input, find the sibling and fill it with the start or end of the next range
-function findAndFillSiblingInput(e, atValue) {
-    const focusedInput = e.target;
+function findAndFillSiblingInput(focusedInput, atValue) {
     // Don't allow a serial number ending in 00000 because they don't exist.
     if (focusedInput.value.slice(-5) === "00000") {
         alert("A serial number ending in 00000 does not exist.");
@@ -381,7 +380,6 @@ function addExceptionField(exceptionField) {
     var exceptionInput = document.createElement("input");
     exceptionInput.setAttribute("type", "text");
     exceptionInput.setAttribute("name", "exception");
-    exceptionInput.setAttribute("id", "exception");
     exceptionInput.setAttribute("placeholder", configChars);
     exceptionInput.setAttribute("pattern", configPattern);
     exceptionInput.setAttribute("required", true);
