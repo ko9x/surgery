@@ -24,7 +24,7 @@
         </div>
         <div class="resultSectionContainer" id="resultSectionContainer">
           <div id="resultSection" class="resultSection">
-            <h3 id="bottomResultsTitle">Bottom Result Label</h3>
+            <h3 id="bottomResultsTitle">No items loaded</h3>
             <div class="bottomResultContainer" id="bottomResultContainer"></div>
           </div>
         </div>
