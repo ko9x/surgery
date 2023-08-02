@@ -45,3 +45,17 @@ export async function storeItem(data) {
         alert(`Something went wrong`);
     }
 }
+
+export async function deleteItem(id) {
+    let response = await fetch(`${API}/item/${id}`, {
+        method: "DELETE"
+    });
+
+    let data = await response.json();
+
+    if(data?.success) {
+        alert(`Item ${data.item.name} was removed from the database`);
+        window.location.reload();
+        return data.item;
+    }
+}

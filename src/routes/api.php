@@ -31,6 +31,9 @@ Route::get("items", [ItemController::class, 'allItems']);
 // Get all the items in the items table for a specific configuration. Also grab all the ranges that have the same config name
 Route::get("item/{name}", [ItemController::class, 'index']);
 
+// Destroy the item matching the id in the path
+Route::delete("item/{id}", [ItemController::class, 'destroy']);
+
 // This is just a route for a test function 
 Route::post("item/add",[ItemController::class, 'add']);
 

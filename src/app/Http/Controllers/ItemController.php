@@ -93,6 +93,18 @@ class ItemController extends Controller
 
     }
 
+    public function destroy($id) {
+        $item = item::find( $id );
+
+        if(!$item ){
+            return response()->json(['success' => false, 'error' => 'No item found.' ]);
+        }
+
+        $item->delete();
+
+        return response()->json(['success' => true, 'message' => 'item deleted.', 'item' => $item ]);
+    }
+
     // These are just test functions to make sure the route is working
     function add() {
         return ["result"=>"add item worked!"];

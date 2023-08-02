@@ -1,4 +1,4 @@
-import { getAllItems } from "./APIService.js";
+import { getAllItems, deleteItem } from "./APIService.js";
 import { isSmall, handleLayout, createBottomResultsArea } from "./common.js";
 
 const items = await getAllItems();
@@ -39,10 +39,11 @@ for (var i = 0; i < bottomResultContainer.length; i++) {
                 e.target.childNodes[1].setAttribute('hidden', 'true');
                 e.target.appendChild(buttonContainer);
                 editItemButton.addEventListener('click', (e) => {
-                    let itemId = e.target.parentNode.parentNode.id
+                    let itemId = e.target.parentNode.parentNode.id;
                 });
                 removeItemButton.addEventListener('click', (e) => {
-                    let itemId = e.target.parentNode.parentNode.id
+                    let itemId = e.target.parentNode.parentNode.id;
+                    deleteItem(itemId);
                 });
             }
         }
