@@ -61,13 +61,12 @@
             </div>
             <p hidden id="errorTextF9XX"></p>
             <div class="rangesContainer" id="rangesContainerF9XX">
-              <div class="rangeContainer" name="F9XX">
+              <div class="rangeContainer F9XX">
                 <div class="rangeInputContainer">
                   <div class="rangeInput">
                     <label class="rangeLabel">Starts at</label>
                     <input
                       type="text"
-                      id="starts_at"
                       class="starts_at"
                       readonly
                       value="F9XXXX00001"
@@ -78,7 +77,6 @@
                     <label class="rangeLabel">Ends at</label>
                     <input
                       type="text"
-                      id="ends_at"
                       class="ends_at"
                       placeholder="F9XX"
                       pattern="[Ff]9[Xx][Xx][TtXx][Xx][0-9]{5}"
@@ -99,7 +97,7 @@
                 <div class="rangeTextAreaContainer">
                   <div>
                     <label class="rangeLabel">Description for pre cut-in range</label>
-                    <button type="button" id="F9XX" class="preCutInButton">Set as description for all pre cut-in ranges</button>
+                    <button type="button" class="preCutInButton">Set as description for all pre cut-in ranges</button>
                   </div>
                   <textarea
                     placeholder="Example: Full size eBox (non-mini)"
@@ -110,13 +108,12 @@
                   ></textarea>
                 </div>
               </div>
-              <div class="rangeContainer" name="F9XX">
+              <div class="rangeContainer F9XX">
                 <div class="rangeInputContainer">
                   <div class="rangeInput">
                     <label class="rangeLabel">Starts at</label>
                     <input
                       type="text"
-                      id="starts_at"
                       class="starts_at"
                       placeholder="F9XX"
                       pattern="[Ff]9[Xx][Xx][TtXx][Xx][0-9]{5}"
@@ -128,7 +125,6 @@
                     <label class="rangeLabel">Ends at</label>
                     <input
                       type="text"
-                      id="ends_at"
                       class="ends_at"
                       readonly
                       value="F9XXTX99999"
@@ -148,7 +144,7 @@
                 <div class="rangeTextAreaContainer">
                   <div>
                     <label class="rangeLabel">Description for post cut-in range</label>
-                    <button type="button" id="F9XX" class="postCutInButton">Set as description for all post cut-in ranges</button>
+                    <button type="button" class="postCutInButton">Set as description for all post cut-in ranges</button>
                   </div>
                   <textarea
                     placeholder="Example: Mini eBox"
@@ -184,13 +180,12 @@
             </div>
             <p hidden id="errorTextF2XX"></p>
             <div class="rangesContainer" id="rangesContainerF2XX">
-              <div class="rangeContainer" name="F2XX">
+              <div class="rangeContainer F2XX">
                 <div class="rangeInputContainer">
                   <div class="rangeInput">
                     <label class="rangeLabel">Starts at</label>
                     <input
                       type="text"
-                      id="starts_at"
                       class="starts_at"
                       readonly
                       value="F2XXXX00001"
@@ -201,7 +196,6 @@
                     <label class="rangeLabel">Ends at</label>
                     <input
                       type="text"
-                      id="ends_at"
                       class="ends_at"
                       placeholder="F2XX"
                       pattern="[Ff]2[Xx][Xx][TtXx][Xx][0-9]{5}"
@@ -230,13 +224,12 @@
                   ></textarea>
                 </div>
               </div>
-              <div class="rangeContainer" name="F2XX">
+              <div class="rangeContainer F2XX">
                 <div class="rangeInputContainer">
                   <div class="rangeInput">
                     <label class="rangeLabel">Starts at</label>
                     <input
                       type="text"
-                      id="starts_at"
                       class="starts_at"
                       placeholder="F2XX"
                       pattern="[Ff]2[Xx][Xx][TtXx][Xx][0-9]{5}"
@@ -248,7 +241,6 @@
                     <label class="rangeLabel">Ends at</label>
                     <input
                       type="text"
-                      id="ends_at"
                       class="ends_at"
                       readonly
                       value="F2XXTX99999"
@@ -301,13 +293,12 @@
             </div>
             <p hidden id="errorTextFAXX"></p>
             <div class="rangesContainer" id="rangesContainerFAXX">
-              <div class="rangeContainer" name="FAXX">
+              <div class="rangeContainer FAXX">
                 <div class="rangeInputContainer">
                   <div class="rangeInput">
                     <label class="rangeLabel">Starts at</label>
                     <input
                       type="text"
-                      id="starts_at"
                       class="starts_at"
                       readonly
                       value="FAXXXE00001"
@@ -318,7 +309,6 @@
                     <label class="rangeLabel">Ends at</label>
                     <input
                       type="text"
-                      id="ends_at"
                       class="ends_at"
                       placeholder="FAXX"
                       pattern="[Ff][Aa][Xx][Xx][TtXx][Ee][0-9]{5}"
@@ -347,13 +337,12 @@
                   ></textarea>
                 </div>
               </div>
-              <div class="rangeContainer" name="FAXX">
+              <div class="rangeContainer FAXX">
                 <div class="rangeInputContainer">
                   <div class="rangeInput">
                     <label class="rangeLabel">Starts at</label>
                     <input
                       type="text"
-                      id="starts_at"
                       class="starts_at"
                       placeholder="FAXX"
                       pattern="[Ff][Aa][Xx][Xx][TtXx][Ee][0-9]{5}"
@@ -365,7 +354,6 @@
                     <label class="rangeLabel">Ends at</label>
                     <input
                       type="text"
-                      id="ends_at"
                       class="ends_at"
                       readonly
                       value="FAXXTE99999"
@@ -418,13 +406,12 @@
             </div>
             <p hidden id="errorTextFBXX"></p>
             <div class="rangesContainer" id="rangesContainerFBXX">
-              <div class="rangeContainer" name="FBXX">
+              <div class="rangeContainer FBXX">
                 <div class="rangeInputContainer">
                   <div class="rangeInput">
                     <label class="rangeLabel">Starts at</label>
                     <input
                       type="text"
-                      id="starts_at"
                       class="starts_at"
                       readonly
                       value="FBXXXE00001"
@@ -435,7 +422,6 @@
                     <label class="rangeLabel">Ends at</label>
                     <input
                       type="text"
-                      id="ends_at"
                       class="ends_at"
                       placeholder="FBXX"
                       pattern="[Ff][Bb][Xx][Xx][TtXx][Ee][0-9]{5}"
@@ -464,13 +450,12 @@
                   ></textarea>
                 </div>
               </div>
-              <div class="rangeContainer" name="FBXX">
+              <div class="rangeContainer FBXX">
                 <div class="rangeInputContainer">
                   <div class="rangeInput">
                     <label class="rangeLabel">Starts at</label>
                     <input
                       type="text"
-                      id="starts_at"
                       class="starts_at"
                       placeholder="FBXX"
                       pattern="[Ff][Bb][Xx][Xx][TtXx][Ee][0-9]{5}"
@@ -482,7 +467,6 @@
                     <label class="rangeLabel">Ends at</label>
                     <input
                       type="text"
-                      id="ends_at"
                       class="ends_at"
                       readonly
                       value="FBXXTE99999"
@@ -535,13 +519,12 @@
             </div>
             <p hidden id="errorTextFSXX"></p>
             <div class="rangesContainer" id="rangesContainerFSXX">
-              <div class="rangeContainer" name="FSXX">
+              <div class="rangeContainer FSXX">
                 <div class="rangeInputContainer">
                   <div class="rangeInput">
                     <label class="rangeLabel">Starts at</label>
                     <input
                       type="text"
-                      id="starts_at"
                       class="starts_at"
                       readonly
                       value="FSXXXX00001"
@@ -552,7 +535,6 @@
                     <label class="rangeLabel">Ends at</label>
                     <input
                       type="text"
-                      id="ends_at"
                       class="ends_at"
                       placeholder="FSXX"
                       pattern="[Ff][Ss][Xx][Xx][TtXx][Xx][0-9]{5}"
@@ -581,13 +563,12 @@
                   ></textarea>
                 </div>
               </div>
-              <div class="rangeContainer" name="FSXX">
+              <div class="rangeContainer FSXX">
                 <div class="rangeInputContainer">
                   <div class="rangeInput">
                     <label class="rangeLabel">Starts at</label>
                     <input
                       type="text"
-                      id="starts_at"
                       class="starts_at"
                       placeholder="FSXX"
                       pattern="[Ff][Ss][Xx][Xx][TtXx][Xx][0-9]{5}"
@@ -599,7 +580,6 @@
                     <label class="rangeLabel">Ends at</label>
                     <input
                       type="text"
-                      id="ends_at"
                       class="ends_at"
                       readonly
                       value="FSXXTX99999"
@@ -652,13 +632,12 @@
             </div>
             <p hidden id="errorTextFAHX"></p>
             <div class="rangesContainer" id="rangesContainerFAHX">
-              <div class="rangeContainer" name="FAHX">
+              <div class="rangeContainer FAHX">
                 <div class="rangeInputContainer">
                   <div class="rangeInput">
                     <label class="rangeLabel">Starts at</label>
                     <input
                       type="text"
-                      id="starts_at"
                       class="starts_at"
                       readonly
                       value="FAHXXX00001"
@@ -669,7 +648,6 @@
                     <label class="rangeLabel">Ends at</label>
                     <input
                       type="text"
-                      id="ends_at"
                       class="ends_at"
                       placeholder="FAHX"
                       pattern="[Ff][Aa][Hh][Xx][TtXx][Xx][0-9]{5}"
@@ -698,13 +676,12 @@
                   ></textarea>
                 </div>
               </div>
-              <div class="rangeContainer" name="FAHX">
+              <div class="rangeContainer FAHX">
                 <div class="rangeInputContainer">
                   <div class="rangeInput">
                     <label class="rangeLabel">Starts at</label>
                     <input
                       type="text"
-                      id="starts_at"
                       class="starts_at"
                       placeholder="FAHX"
                       pattern="[Ff][Aa][Hh][Xx][TtXx][Xx][0-9]{5}"
@@ -716,7 +693,6 @@
                     <label class="rangeLabel">Ends at</label>
                     <input
                       type="text"
-                      id="ends_at"
                       class="ends_at"
                       readonly
                       value="FAHXTX99999"
@@ -769,13 +745,12 @@
             </div>
             <p hidden id="errorTextFBHX"></p>
             <div class="rangesContainer" id="rangesContainerFBHX">
-              <div class="rangeContainer" name="FBHX">
+              <div class="rangeContainer FBHX">
                 <div class="rangeInputContainer">
                   <div class="rangeInput">
                     <label class="rangeLabel">Starts at</label>
                     <input
                       type="text"
-                      id="starts_at"
                       class="starts_at"
                       readonly
                       value="FBHXXX00001"
@@ -786,7 +761,6 @@
                     <label class="rangeLabel">Ends at</label>
                     <input
                       type="text"
-                      id="ends_at"
                       class="ends_at"
                       placeholder="FBHX"
                       pattern="[Ff][Bb][Hh][Xx][TtXx][Xx][0-9]{5}"
@@ -815,13 +789,12 @@
                   ></textarea>
                 </div>
               </div>
-              <div class="rangeContainer" name="FBHX">
+              <div class="rangeContainer FBHX">
                 <div class="rangeInputContainer">
                   <div class="rangeInput">
                     <label class="rangeLabel">Starts at</label>
                     <input
                       type="text"
-                      id="starts_at"
                       class="starts_at"
                       placeholder="FBHX"
                       pattern="[Ff][Bb][Hh][Xx][TtXx][Xx][0-9]{5}"
@@ -833,7 +806,6 @@
                     <label class="rangeLabel">Ends at</label>
                     <input
                       type="text"
-                      id="ends_at"
                       class="ends_at"
                       readonly
                       value="FBHXTX99999"
@@ -886,13 +858,12 @@
             </div>
             <p hidden id="errorTextFAMH"></p>
             <div class="rangesContainer" id="rangesContainerFAMH">
-              <div class="rangeContainer" name="FAMH">
+              <div class="rangeContainer FAMH">
                 <div class="rangeInputContainer">
                   <div class="rangeInput">
                     <label class="rangeLabel">Starts at</label>
                     <input
                       type="text"
-                      id="starts_at"
                       class="starts_at"
                       readonly
                       value="FAMHXX00001"
@@ -903,7 +874,6 @@
                     <label class="rangeLabel">Ends at</label>
                     <input
                       type="text"
-                      id="ends_at"
                       class="ends_at"
                       placeholder="FAMH"
                       pattern="[Ff][Aa][Mm][Hh][TtXx][Xx][0-9]{5}"
@@ -932,13 +902,12 @@
                   ></textarea>
                 </div>
               </div>
-              <div class="rangeContainer" name="FAMH">
+              <div class="rangeContainer FAMH">
                 <div class="rangeInputContainer">
                   <div class="rangeInput">
                     <label class="rangeLabel">Starts at</label>
                     <input
                       type="text"
-                      id="starts_at"
                       class="starts_at"
                       placeholder="FAMH"
                       pattern="[Ff][Aa][Mm][Hh][TtXx][Xx][0-9]{5}"
@@ -950,7 +919,6 @@
                     <label class="rangeLabel">Ends at</label>
                     <input
                       type="text"
-                      id="ends_at"
                       class="ends_at"
                       readonly
                       value="FAMHTX99999"
@@ -1003,13 +971,12 @@
             </div>
             <p hidden id="errorTextFBMH"></p>
             <div class="rangesContainer" id="rangesContainerFBMH">
-              <div class="rangeContainer" name="FBMH">
+              <div class="rangeContainer FBMH">
                 <div class="rangeInputContainer">
                   <div class="rangeInput">
                     <label class="rangeLabel">Starts at</label>
                     <input
                       type="text"
-                      id="starts_at"
                       class="starts_at"
                       readonly
                       value="FBMHXX00001"
@@ -1020,7 +987,6 @@
                     <label class="rangeLabel">Ends at</label>
                     <input
                       type="text"
-                      id="ends_at"
                       class="ends_at"
                       placeholder="FBMH"
                       pattern="[Ff][Bb][Mm][Hh][TtXx][Xx][0-9]{5}"
@@ -1049,13 +1015,12 @@
                   ></textarea>
                 </div>
               </div>
-              <div class="rangeContainer" name="FBMH">
+              <div class="rangeContainer FBMH">
                 <div class="rangeInputContainer">
                   <div class="rangeInput">
                     <label class="rangeLabel">Starts at</label>
                     <input
                       type="text"
-                      id="starts_at"
                       class="starts_at"
                       placeholder="FBMH"
                       pattern="[Ff][Bb][Mm][Hh][TtXx][Xx][0-9]{5}"
@@ -1067,7 +1032,6 @@
                     <label class="rangeLabel">Ends at</label>
                     <input
                       type="text"
-                      id="ends_at"
                       class="ends_at"
                       readonly
                       value="FBMHTX99999"

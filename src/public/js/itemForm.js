@@ -29,14 +29,14 @@ for (var i = 0; i < watchStartsAt.length; i++) {
 
 // Set the description for all the pre cut-in descriptions
 preCutInButton[0].addEventListener("click", (e) => {
-    // Pass the id from the button the user pressed and the controlPrefix "pre"
-    setCutInDescription(e.target.id, "pre");
+    // Pass the controlPrefix "pre"
+    setCutInDescription("pre");
 });
 
 // Set the description for all the post cut-in descriptions
 postCutInButton[0].addEventListener("click", (e) => {
-    // Pass the id from the button the user pressed and the controlPrefix "post"
-    setCutInDescription(e.target.id, "post");
+    // Pass the controlPrefix "post"
+    setCutInDescription("post");
 });
 
 // Loop through all the sectionTitles and assign the click listener that will run the collapseSection function
@@ -70,9 +70,9 @@ itemForm.addEventListener("submit", (e) => {
         creator: itemInfo[0].value,
     };
 
-    // Loop through each element that has a name which matches one of the config codes
+    // Loop through each element that has a class name which matches one of the config codes
     for (var config of configs) {
-        let itemRanges = document.getElementsByName(config.code);
+        let itemRanges = document.getElementsByClassName(config.code);
 
         // Group each range and create an object to pass to the ranges array
         for (var range of itemRanges) {
@@ -337,10 +337,10 @@ function findAndFillSiblingInput(e, atValue) {
 }
 
 // Copy the description from the textArea to the rest of the textAreas that match the controlPrefix
-function setCutInDescription(textAreaID, controlPrefix) {
+function setCutInDescription(controlPrefix) {
     // Find the element that contains the text the user wants to copy to the other textAreas
     const userDescription = document.getElementById(
-        `${controlPrefix}CutIn${textAreaID}`
+        `${controlPrefix}CutInF9XX`
     );
     // Loop over all the text areas and only assign the userDescription to areas that match the controlPrefix
     const allTextAreas = document.getElementsByClassName("rangeTextArea");
