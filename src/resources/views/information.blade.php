@@ -33,10 +33,10 @@
         <div class="resultSectionContainer" id="resultSectionContainer" hidden>
           <div id="resultSection" class="resultSection">
             <div class="topResultItemContainer">
-              <h3 id="topResultLabel"></h3>
+              <h3 id="topResultLabel">Top Result Label</h3>
               <div class="topResultContent" id="topResultContent"></div>
             </div>
-            <h3 id="bottomResultsTitle"></h3>
+            <h3 id="bottomResultsTitle">Bottom Result Label</h3>
             <div class="bottomResultContainer" id="bottomResultContainer"></div>
           </div>
         </div>
