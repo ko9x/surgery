@@ -50,6 +50,13 @@ for (var i = 0; i < collapseSection.length; i++) {
 for (var i = 0; i < addExceptions.length; i++) {
     addExceptions[i].addEventListener("click", (e) => {
         addExceptionField(e.target.value);
+        // Loop over all the starts_at inputs and add an eventListener
+        const watchExceptions = document.querySelectorAll(".exception");
+        for (var i = 0; i < watchExceptions.length; i++) {
+            watchExceptions[i].addEventListener("keyup", (e) => {
+                verifyExceptionOutOfRange(e.target);
+            });
+        }
     });
 }
 
@@ -267,6 +274,10 @@ function userCollapseSection(sectionId) {
         // addRangeButton.classList.add('hideElement');
         collapseText.innerHTML = "(show section)";
     }
+}
+
+function verifyExceptionOutOfRange(focusedException) {
+    console.log('focusedException',focusedException.value); //@DEBUG
 }
 
 // Once the user enters a valid serial number in an input, find the sibling and fill it with the start or end of the next range
