@@ -1,22 +1,14 @@
 ### Current Focus
-* Continue working on the removeItem view
-* Make a removeItem view
-    * (done) Create a function in the APIService that will return the name of all the items in the database
-        * (done) Run the createBottomResultsArea function for each item that is returned
-            * (done) Add a button to each item that will return the item id
-    * Create a function in the APIService that will send the id of the selected item to the backend to be removed
-    * Make sure removing an item removes all the associated ranges and exceptions
-    * Show a confirm popup that tells the user that removing an item cannot be undone
-        * If confirmed show an alert saying the item has been removed
-            * Say the name of the item in the alert?
-* The information page will be the default page with a button that says "Login"
-    * Once a user is logged in that button will change to say "maintenance"
-        * The maintenance menu default is the itemForm. Have a button to go to information and one for remove item view
+* Continue making sure exceptions are after the ends_at or before the starts_at number
+    * Is this completely necessary?
+    * Add an alert that explains what an exception is?
 * Make a login form
-    * Once the user is logged in they will have access to the information view, the itemForm view and the removeItem view
-* Secure the route to the itemForm and the RemoveItem view
+    * Once the user is logged in they will have access to the information view, the itemForm view and the manageItems view
+* The information page will be the default page with a button that says "Login"
+    * Once a user is logged in, show a header that has the buttons for the other views and a logout button
+* Secure the route to the itemForm and the manageItems view
 * Validate the item information here on the backend before storing it to the database
-    * Make all the ranges are covered and that sort of thing
+    * Make sure all the ranges are covered and that sort of thing
 * Fix the styling and functionality for small screens for all views
     * The manage items view user a hover to show the buttons for desktop.
         * We will need to check if the user is on mobile and then add a click listener instead
@@ -68,4 +60,12 @@
         * Then import that stuff into each file as needed
 * Remove all the information view stuff from the itemForm blade
 * Remove all the itemForm view stuff from the information blade
-            
+* Make a manageItems view
+    * Create a function in the APIService that will return the name of all the items in the database
+        * Run the createBottomResultsArea function for each item that is returned
+            * Add a button to each item that will return the item id
+    * Create a function in the APIService that will send the id of the selected item to the backend to be removed
+    * Make sure removing an item removes all the associated ranges and exceptions
+    * Show a confirm popup that tells the user that removing an item cannot be undone
+    * Create a function in the APIService that will send the id and new name to the backend edit the name
+    * Show an alert that says the name has been updated
