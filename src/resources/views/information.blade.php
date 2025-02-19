@@ -32,7 +32,7 @@
         </div>
         <div class="resultSectionContainer" id="resultSectionContainer" hidden>
           <div id="resultSection" class="resultSection">
-            <div class="topResultItemContainer">
+            <div class="topResultItemContainer" id=topResultItemContainer>
               <h3 id="topResultLabel">Top Result Label</h3>
               <div class="topResultContent" id="topResultContent"></div>
             </div>

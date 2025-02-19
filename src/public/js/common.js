@@ -100,10 +100,11 @@ export function createBottomResultsArea(titleText, labelText, contentText, id) {
     bottomResultsTitle.innerHTML = titleText;
     let bottomResultItemContainer = document.createElement("div");
     bottomResultItemContainer.classList.add("bottomResultItemContainer");
+    bottomResultItemContainer.style.backgroundColor = "white";
     let bottomResultLabel = document.createElement("h3");
-    bottomResultLabel.classList.add("bottomResultLabel");
-    bottomResultLabel.innerText = labelText;
-    let bottomResultContent = document.createElement("div");
+    // bottomResultLabel.classList.add("bottomResultLabel");
+    bottomResultLabel.innerText = labelText + ":";
+    let bottomResultContent = document.createElement("h4");
     bottomResultContent.classList.add("bottomResultContent");
     bottomResultContent.innerText = contentText;
     bottomResultItemContainer.appendChild(bottomResultLabel);
