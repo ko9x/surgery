@@ -92,7 +92,7 @@ function flashSearchButton() {
 function validateSerialNumber() {
     let regex = /F[ABS29][HMX][HX][TX][EX]\d\d\d\d\d/i;
     let capitalizedSearchItem = searchItem.value.toUpperCase();
-    if (capitalizedSearchItem.match(regex)) {
+    if (capitalizedSearchItem.match(regex) && capitalizedSearchItem.length === 11) {
         findConfiguration(capitalizedSearchItem);
     } else {
         displayError();
@@ -102,7 +102,7 @@ function validateSerialNumber() {
 // Populate the results section fields with the configuration information
 function displayResults(id, name, itemInfo, userInterface) {
     const configuration = configs.find((config) => config.id === id);
-    const titleText = "System Cut-In Information";
+    const titleText = "";
     topResultLabel.innerText = "System Configuration Information";
     topResultContent.innerText = `${configuration.description} ${userInterface}`;
 
