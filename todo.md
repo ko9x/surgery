@@ -1,4 +1,5 @@
 ### Current Focus
+* Get familiar with how all this works again
 * Continue making sure exceptions are after the ends_at or before the starts_at number
     * Is this completely necessary?
     * Add an alert that explains what an exception is?
@@ -21,6 +22,15 @@
     * Or at least comment them so we know why they are there
 * Test out sanctum/csrf-cookie route?
     * Not exaclty sure what this is
+* Streamline the form
+    * Each config should just be one card 
+    * Each card will have the following
+        * the cut-in serial number
+        * pre cut-in description
+            * exception button to add the pre cut-in description to a specific serial number
+        * post cut-in description
+            * exception button to add the post cut-in description to a specific serial number
+    * Add a button somewhere that allows the user to use the same description for all the pre or post fields.
 
 ### Done
 * Track this project with GitHub!

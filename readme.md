@@ -1,8 +1,9 @@
 ### Running the project
 * Make sure Docker Desktop is running
 
-* To spin up the docker container, navigate to the root directory of this project in terminal and run this command:
+* To spin up the docker container, navigate to the root directory of this project in terminal (which should be development/docker-projects/surgery) and run this command:
     * `docker compose up -d`
+    * Once the container is running navigate to localhost:8080
 * To shut down the docker container, navigate to the root directory of this project in terminal and run this command:
     * `docker compose down`
 
