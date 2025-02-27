@@ -174,6 +174,7 @@ function checkRangeCoverage(ranges) {
             let config = ranges[i].name;
             // Check for overlap (This was only used to add the High Voltage Cable item. No other items should have overlap)
             if (ranges[i].starts_at === ranges[i + 1].starts_at) {
+                console.log('overlap detected', ); //@DEBUG
                 while (
                     ranges[i + indexCounter] &&
                     ranges[i + indexCounter].name === config
@@ -280,22 +281,20 @@ function checkSerialPlusOne(controlString, checkString, config) {
 }
 
 // Hide the rangeSection and the addRange button when the user clicks "collapse section"
-// This needs to also hide the add range button if the user is in the advanced form @DEBUG
 function userCollapseSection(sectionId) {
     const configChars = sectionId.substr(sectionId.length - 4);
     const collapseSection = document.getElementById(
         `rangesContainer${configChars}`
     );
-    // The add range button was only used for adding the High Voltage Cable item
-    // const addRangeButton = document.getElementById(`addRangeButton${configChars}`);
+    const addRangeButton = document.getElementById(`addRangeButton${configChars}`);
     const collapseText = document.getElementById(sectionId);
     if (collapseSection.classList.contains("hideElement")) {
         collapseSection.classList.remove("hideElement");
-        // addRangeButton.classList.remove('hideElement');
+        addRangeButton.classList.remove('hideElement');
         collapseText.innerHTML = "(collapse section)";
     } else {
         collapseSection.classList.add("hideElement");
-        // addRangeButton.classList.add('hideElement');
+        addRangeButton.classList.add('hideElement');
         collapseText.innerHTML = "(show section)";
     }
 }
@@ -305,7 +304,6 @@ function verifyExceptionOutOfRange(focusedException) {
 }
 
 // Once the user enters a valid serial number in an input, find the sibling and fill it with the start or end of the next range
-// findAndFillSiblingInput needs to be turned off when the user enters into the advanced form @DEBUG
 function findAndFillSiblingInput(focusedInput, atValue) {
     // Don't allow a serial number ending in 00000 because they don't exist.
     if (focusedInput.value.slice(-5) === "00000") {
@@ -540,10 +538,10 @@ function addRangeField(rangeField) {
     const configPattern = findPatternByConfig(rangeConfigChars);
 
     // Then we create the element to add to the DOM
-    // Create rangeContainer
+    // Create rangeContainer and add the correct classes so it's the same as a hard coded rangeContainer
     var rangeContainer = document.createElement("div");
     rangeContainer.classList.add("rangeContainer");
-    rangeContainer.setAttribute("name", rangeConfigChars);
+    rangeContainer.classList.add(rangeConfigChars);
 
     // Create a container for the rangeRemoveButton
     var rangeRemoveButtonContainer = document.createElement("div");
