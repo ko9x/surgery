@@ -1,13 +1,20 @@
 ### Current Focus
-* Get familiar with how all this works again
+* Test the advanced form functionality
+    * Add a pop-up when user presses add intermediate range button warning them to enter serials accurately?
+* Test the findAndFillSibling funciton work with intermediate ranges including exceptions
+* Add a message if the user has introduced an overlap and make it obvious this should be avoided if possible    
+* Try to think of edge cases where the advanced form could cause issues
+
 * Continue making sure exceptions are after the ends_at or before the starts_at number
     * Is this completely necessary?
-    * Add an alert that explains what an exception is?
-* Make a login form
-    * Once the user is logged in they will have access to the information view, the itemForm view and the manageItems view
-* The information page will be the default page with a button that says "Login"
-    * Once a user is logged in, show a header that has the buttons for the other views and a logout button
+    * Add an alert/info button/hover thing that explains what an exception is
+
+* Enter some known good cut-ins and make a database file backup
+    * Test that the backup can be pushed while the app is on the server
+        * Then enter all the know good cut-ins and create a backup to push to the server
+            * also email it to myself and maybe Blake and Cristian just so there are lots of failsafes
 * Secure the route to the itemForm and the manageItems view
+    * For now we are going to do this by commenting out the path that hits the item form and manage items pages
 * Validate the item information here on the backend before storing it to the database
     * Make sure all the ranges are covered and that sort of thing
 * Fix the styling and functionality for small screens for all views
@@ -18,10 +25,16 @@
             * This won't be an issue once the app is on the server
 
 ### What to do later
+* Make a login form
+    * Once the user is logged in they will have access to the information view, the itemForm view and the manageItems view
+    * The information page will be the default page with a button that says "Login"
+    * Once a user is logged in, show a header that has the buttons for the other views and a logout button
+* Make sure all @DEBUG tags are addressed and removed
 * Cleanup all unused routes and functions
     * Or at least comment them so we know why they are there
 * Test out sanctum/csrf-cookie route?
     * Not exaclty sure what this is
+* Fix the "issues" in the console. They are not errors just stuff like, all the inputs need a name attribute even though it never gets used.
 * Streamline the form
     * Each config should just be one card 
     * Each card will have the following
@@ -79,3 +92,4 @@
     * Show a confirm popup that tells the user that removing an item cannot be undone
     * Create a function in the APIService that will send the id and new name to the backend edit the name
     * Show an alert that says the name has been updated
+* Add advanced form funcitonality
