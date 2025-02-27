@@ -314,11 +314,13 @@ function findAndFillSiblingInput(focusedInput, atValue) {
     const mainContainer = document.getElementById(
         `rangesContainer${focusedInput.placeholder}`
     );
+    let greatGreatGrandParent = focusedInput.parentNode.parentNode.parentNode.parentNode;
+    let greatGrandParent = focusedInput.parentNode.parentNode.parentNode;
+    let childIndex = Array.prototype.indexOf.call(greatGreatGrandParent.children, greatGrandParent);
     const siblingInput =
-        mainContainer.children[atValue === "end" ? 1 : 0].children[0].children[
+        mainContainer.children[atValue === "end" ? childIndex + 1 : childIndex - 1].children[0].children[
             atValue === "end" ? 0 : 1
         ].children[1];
-    // Verify the user entered a serial number that matches the pattern and is 11 characters long
     if (
         configPattern.test(focusedInput.value) &&
         focusedInput.value.length === 11
@@ -585,6 +587,10 @@ function addRangeField(rangeField) {
     // Append the rangeInputStart elements
     rangeInputStart.appendChild(rangeInputStartsAtLabel);
     rangeInputStart.appendChild(rangeInputStartsAt);
+     // Add the findAndFillSibling event listener
+     rangeInputStart.addEventListener("keyup", (e) => {
+        findAndFillSiblingInput(e.target, "start");
+    });
 
     // Create rangeInputEnd which is the div that wraps the input and label
     var rangeInputEnd = document.createElement("div");
@@ -611,6 +617,10 @@ function addRangeField(rangeField) {
     // Append the rangeInputEnd elements
     rangeInputEnd.appendChild(rangeInputEndsAtLabel);
     rangeInputEnd.appendChild(rangeInputEndsAt);
+    // Add the findAndFillSibling event listener
+    rangeInputEnd.addEventListener("keyup", (e) => {
+        findAndFillSiblingInput(e.target, "end");
+    });
 
     // Append the rangeInputStart and rangeInputEnd to rangeInputContainer
     rangeInputContainer.appendChild(rangeInputStart);
