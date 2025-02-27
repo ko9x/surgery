@@ -6,7 +6,9 @@ const formSection = document.getElementById("formSection");
 const itemForm = document.getElementById("itemForm");
 const collapseSection = document.querySelectorAll(".sectionTitleButton");
 const preCutInButton = document.querySelectorAll(".preCutInButton");
+const preCutInClearButton = document.querySelectorAll(".preCutInClearButton");
 const postCutInButton = document.querySelectorAll(".postCutInButton");
+const postCutInClearButton = document.querySelectorAll(".postCutInClearButton");
 const addExceptions = document.querySelectorAll(".exceptionButton");
 const watchEndsAt = document.querySelectorAll(".ends_at");
 const watchStartsAt = document.querySelectorAll(".starts_at");
@@ -33,10 +35,22 @@ preCutInButton[0].addEventListener("click", (e) => {
     setCutInDescription("pre");
 });
 
+// Clear the description for all the pre cut-in descriptions
+preCutInClearButton[0].addEventListener("click", (e) => {
+    // Pass the controlPrefix "pre"
+    clearCutInDescription("pre");
+});
+
 // Set the description for all the post cut-in descriptions
 postCutInButton[0].addEventListener("click", (e) => {
     // Pass the controlPrefix "post"
     setCutInDescription("post");
+});
+
+// Clear the description for the post cut-in descriptions
+postCutInClearButton[0].addEventListener("click", (e) => {
+    // Pass the controlPrefix "post"
+    clearCutInDescription("post");
 });
 
 // Loop through all the sectionTitles and assign the click listener that will run the collapseSection function
@@ -375,6 +389,20 @@ function setCutInDescription(controlPrefix) {
         );
         if (checkPrefix === controlPrefix) {
             allTextAreas[i].value = userDescription.value;
+        }
+    }
+}
+// Clear all the description textAreas for the selected controlPrefix
+function clearCutInDescription(controlPrefix) {
+    // Loop over all the text areas and only clear the textareas that match the controlPrefix
+    const allTextAreas = document.getElementsByClassName("rangeTextArea");
+    for (var i = 0; i < allTextAreas.length; i++) {
+        let checkPrefix = allTextAreas[i].id.substring(
+            0,
+            allTextAreas[i].id.length - 9
+        );
+        if (checkPrefix === controlPrefix) {
+            allTextAreas[i].value = "";
         }
     }
 }

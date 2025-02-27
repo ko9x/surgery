@@ -66,6 +66,7 @@
                   <div class="rangeInput">
                     <label class="rangeLabel">Starts at</label>
                     <input
+                      name="starts_at"
                       type="text"
                       class="starts_at"
                       readonly
@@ -97,7 +98,8 @@
                 <div class="rangeTextAreaContainer">
                   <div>
                     <label class="rangeLabel">Description for pre cut-in range</label>
-                    <button type="button" class="preCutInButton">Set as description for all pre cut-in ranges</button>
+                    <button type="button" class="preCutInButton">Set as description for pre cut-in ranges</button>
+                    <button type="button" class="preCutInClearButton">Clear pre cut-in descriptions</button>
                   </div>
                   <textarea
                     placeholder="Example: Full size eBox (non-mini)"
@@ -144,7 +146,8 @@
                 <div class="rangeTextAreaContainer">
                   <div>
                     <label class="rangeLabel">Description for post cut-in range</label>
-                    <button type="button" class="postCutInButton">Set as description for all post cut-in ranges</button>
+                    <button type="button" class="postCutInButton">Set as description for post cut-in ranges</button>
+                    <button type="button" class="postCutInClearButton">Clear post cut-in descriptions</button>
                   </div>
                   <textarea
                     placeholder="Example: Mini eBox"
