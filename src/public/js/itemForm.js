@@ -654,7 +654,7 @@ function addRangeField(rangeField) {
 
     // Create the rangeInputStartsAtLabel
     var rangeTextAreaLabel = document.createElement("label");
-    rangeTextAreaLabel.innerHTML = "Display";
+    rangeTextAreaLabel.innerHTML = "Description";
     rangeTextAreaLabel.classList.add("rangeLabel");
 
     // Create the rangeTextArea element
@@ -686,4 +686,16 @@ function addRangeField(rangeField) {
     // Append the onclick function to the button after all other appends are done so the parent and child elements exist
     rangeRemoveButton.onclick = () =>
         removeChildInstanceFromParentInstance(rangeSection, rangeContainer);
+
+    flashNewRangeContainer(rangeContainer);
+
+}
+
+function flashNewRangeContainer(itemToFlash) {
+    itemToFlash.style.backgroundColor = "rgba(100, 0, 160, 0.3)";
+    itemToFlash.style.color = "white";
+    setTimeout(() => {
+        itemToFlash.style.color = "black";
+        itemToFlash.style.backgroundColor = "white";
+    }, 100);
 }
