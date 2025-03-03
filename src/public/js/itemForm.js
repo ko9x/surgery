@@ -172,33 +172,33 @@ function checkRangeCoverage(ranges) {
         // Only compare the ranges if they are the same config
         if (ranges[i].name === ranges[i + 1].name) {
             let config = ranges[i].name;
-            // Check for overlap (This was only used to add the High Voltage Cable item. No other items should have overlap)
-            if (ranges[i].starts_at === ranges[i + 1].starts_at) {
-                console.log('overlap detected', ); //@DEBUG
-                while (
-                    ranges[i + indexCounter] &&
-                    ranges[i + indexCounter].name === config
-                ) {
-                    // Verify the overlapping ranges are in the correct order
-                    if (
-                        verifyOverlapOrder(
-                            ranges[i].ends_at,
-                            ranges[i + indexCounter].ends_at,
-                            config
-                        )
-                    ) {
-                        indexCounter++;
-                    } else {
-                        return;
-                    }
-                }
-                // Find the last overLapping range to compare with the previousRange
-                return checkSerialPlusOne(
-                    previousRange.ends_at,
-                    ranges[i + (indexCounter - 1)].starts_at,
-                    config
-                );
-            }
+            // Check for overlap (Used for an outdated cutin range for HV Cables. No cutins should ever have overlap)
+            // if (ranges[i].starts_at === ranges[i + 1].starts_at) {
+            //     console.log('overlap detected', ); //@DEBUG
+            //     while (
+            //         ranges[i + indexCounter] &&
+            //         ranges[i + indexCounter].name === config
+            //     ) {
+            //         // Verify the overlapping ranges are in the correct order
+            //         if (
+            //             verifyOverlapOrder(
+            //                 ranges[i].ends_at,
+            //                 ranges[i + indexCounter].ends_at,
+            //                 config
+            //             )
+            //         ) {
+            //             indexCounter++;
+            //         } else {
+            //             return;
+            //         }
+            //     }
+            //     // Find the last overLapping range to compare with the previousRange
+            //     return checkSerialPlusOne(
+            //         previousRange.ends_at,
+            //         ranges[i + (indexCounter - 1)].starts_at,
+            //         config
+            //     );
+            // }
             checkSerialPlusOne(
                 ranges[i].ends_at,
                 ranges[i + 1].starts_at,
