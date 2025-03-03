@@ -527,8 +527,15 @@ function verifyOverlapOrder(controlString, checkString, config) {
     }
 }
 
+let initialRangeAdded = false;
+
 // Add another range to the form that is styled correctly and in the correct location
 function addRangeField(rangeField) {
+    if (!initialRangeAdded) {
+        initialRangeAdded = true;
+        // A warning popup alerting the user to the dangers of adding an intermediate range
+        alert("Warning! Adding an intermediate range greatly increases the potential for serial number gaps and overlaps. Ensure all serial number ranges are entered correctly with no gaps or overlapping ranges.");
+    }
     // The id from the button is passed in so we know where to add the new range field
     const rangeSection = document.getElementById(`${rangeField}`);
 
@@ -644,7 +651,7 @@ function addRangeField(rangeField) {
     );
     exceptionButton.setAttribute(
         "title",
-        "An exception is a serial number outside the set range where the Display description still applies"
+        "An exception is a serial number outside the set range where the description still applies"
     );
     exceptionButton.classList.add("exceptionButton");
     exceptionButton.innerHTML = "Add exception";
@@ -694,7 +701,7 @@ function addRangeField(rangeField) {
 }
 
 function flashNewRangeContainer(itemToFlash) {
-    itemToFlash.style.backgroundColor = "rgba(100, 0, 160, 0.3)";
+    itemToFlash.style.backgroundColor = "rgba(100, 0, 160, 0.1)";
     itemToFlash.style.color = "white";
     setTimeout(() => {
         itemToFlash.style.color = "black";

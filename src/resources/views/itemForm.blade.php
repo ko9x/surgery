@@ -89,12 +89,16 @@
                 <div id="exceptionSectionStartF9XX"></div>
                 <button
                   class="exceptionButton"
-                  title="An exception is a serial number outside the set range where the Display description still applies"
+                  title="An exception is a serial number outside the set range where the description still applies"
                   type="button"
                   value="exceptionSectionStartF9XX"
                 >
                   Add exception
                 </button>
+                <span style="cursor: pointer"
+                  title="An exception is a serial number outside the set range where the description still applies"
+                >
+                &#9432;</span>
                 <div class="rangeTextAreaContainer">
                   <div>
                     <label class="rangeLabel">Description for pre cut-in range</label>
@@ -137,12 +141,16 @@
                 <div id="exceptionSectionEndF9XX"></div>
                 <button
                   class="exceptionButton"
-                  title="An exception is a serial number outside the set range where the Display description still applies"
+                  title="An exception is a serial number outside the set range where the description still applies"
                   type="button"
                   value="exceptionSectionEndF9XX"
                 >
                   Add exception
                 </button>
+                <span style="cursor: pointer"
+                  title="An exception is a serial number outside the set range where the description still applies"
+                >
+                &#9432;</span>
                 <div class="rangeTextAreaContainer">
                   <div>
                     <label class="rangeLabel">Description for post cut-in range</label>
@@ -162,12 +170,16 @@
             <button
               class="rangeButton"
               type="button"
-              title="Add another serial range if 3 or more descriptions need to be displayed for the cut-in"
+              title="Add another serial range if multiple cut-ins exist"
               value="rangesContainerF9XX"
               id="addRangeButtonF9XX"
             >
               Add an intermediate serial number range for F9XX
             </button>
+            <span style="cursor: pointer"
+              title="Add another serial range if multiple cut-ins exist"
+            >
+            &#9432;</span>
           </div>
           <div id="sectionContainerF2XX">
             <div class="sectionTitle">
@@ -210,12 +222,16 @@
                 <div id="exceptionSectionStartF2XX"></div>
                 <button
                   class="exceptionButton"
-                  title="An exception is a serial number outside the set range where the Display description still applies"
+                  title="An exception is a serial number outside the set range where the description still applies"
                   type="button"
                   value="exceptionSectionStartF2XX"
                 >
                   Add exception
                 </button>
+                <span style="cursor: pointer"
+                  title="An exception is a serial number outside the set range where the description still applies"
+                >
+                &#9432;</span>
                 <div class="rangeTextAreaContainer">
                   <label class="rangeLabel">Description for pre cut-in range</label>
                   <textarea
@@ -254,12 +270,16 @@
                 <div id="exceptionSectionEndF2XX"></div>
                 <button
                   class="exceptionButton"
-                  title="An exception is a serial number outside the set range where the Display description still applies"
+                  title="An exception is a serial number outside the set range where the description still applies"
                   type="button"
                   value="exceptionSectionEndF2XX"
                 >
                   Add exception
                 </button>
+                <span style="cursor: pointer"
+                  title="An exception is a serial number outside the set range where the description still applies"
+                >
+                &#9432;</span>
                 <div class="rangeTextAreaContainer">
                   <label class="rangeLabel">Description for post cut-in range</label>
                   <textarea
@@ -275,12 +295,16 @@
             <button
               class="rangeButton"
               type="button"
-              title="Add another serial range if 3 or more descriptions need to be displayed for the cut-in"
+              title="Add another serial range if multiple cut-ins exist"
               value="rangesContainerF2XX"
               id="addRangeButtonF2XX"
             >
               Add an intermediate serial number range for F2XX
             </button>
+            <span style="cursor: pointer"
+              title="Add another serial range if multiple cut-ins exist"
+            >
+            &#9432;</span>
           </div>
           <div id="sectionContainerFAXX">
             <div class="sectionTitle">
@@ -323,12 +347,16 @@
                 <div id="exceptionSectionStartFAXX"></div>
                 <button
                   class="exceptionButton"
-                  title="An exception is a serial number outside the set range where the Display description still applies"
+                  title="An exception is a serial number outside the set range where the description still applies"
                   type="button"
                   value="exceptionSectionStartFAXX"
                 >
                   Add exception
                 </button>
+                <span style="cursor: pointer"
+                  title="An exception is a serial number outside the set range where the description still applies"
+                >
+                &#9432;</span>
                 <div class="rangeTextAreaContainer">
                   <label class="rangeLabel">Description for pre cut-in range</label>
                   <textarea
@@ -367,12 +395,16 @@
                 <div id="exceptionSectionEndFAXX"></div>
                 <button
                   class="exceptionButton"
-                  title="An exception is a serial number outside the set range where the Display description still applies"
+                  title="An exception is a serial number outside the set range where the description still applies"
                   type="button"
                   value="exceptionSectionEndFAXX"
                 >
                   Add exception
                 </button>
+                <span style="cursor: pointer"
+                  title="An exception is a serial number outside the set range where the description still applies"
+                >
+                &#9432;</span>
                 <div class="rangeTextAreaContainer">
                   <label class="rangeLabel">Description for post cut-in range</label>
                   <textarea
@@ -388,12 +420,16 @@
             <button
               class="rangeButton"
               type="button"
-              title="Add another serial range if 3 or more descriptions need to be displayed for the cut-in"
+              title="Add another serial range if multiple cut-ins exist"
               value="rangesContainerFAXX"
               id="addRangeButtonFAXX"
             >
               Add an intermediate serial number range for FAXX
             </button>
+            <span style="cursor: pointer"
+              title="Add another serial range if multiple cut-ins exist"
+            >
+            &#9432;</span>
           </div>
           <div id="sectionContainerFBXX">
             <div class="sectionTitle">
@@ -436,12 +472,16 @@
                 <div id="exceptionSectionStartFBXX"></div>
                 <button
                   class="exceptionButton"
-                  title="An exception is a serial number outside the set range where the Display description still applies"
+                  title="An exception is a serial number outside the set range where the description still applies"
                   type="button"
                   value="exceptionSectionStartFBXX"
                 >
                   Add exception
                 </button>
+                <span style="cursor: pointer"
+                  title="An exception is a serial number outside the set range where the description still applies"
+                >
+                &#9432;</span>
                 <div class="rangeTextAreaContainer">
                   <label class="rangeLabel">Description for pre cut-in range</label>
                   <textarea
@@ -480,12 +520,16 @@
                 <div id="exceptionSectionEndFBXX"></div>
                 <button
                   class="exceptionButton"
-                  title="An exception is a serial number outside the set range where the Display description still applies"
+                  title="An exception is a serial number outside the set range where the description still applies"
                   type="button"
                   value="exceptionSectionEndFBXX"
                 >
                   Add exception
                 </button>
+                <span style="cursor: pointer"
+                  title="An exception is a serial number outside the set range where the description still applies"
+                >
+                &#9432;</span>
                 <div class="rangeTextAreaContainer">
                   <label class="rangeLabel">Description for post cut-in range</label>
                   <textarea
@@ -501,12 +545,16 @@
             <button
               class="rangeButton"
               type="button"
-              title="Add another serial range if 3 or more descriptions need to be displayed for the cut-in"
+              title="Add another serial range if multiple cut-ins exist"
               value="rangesContainerFBXX"
               id="addRangeButtonFBXX"
             >
               Add an intermediate serial number range for FBXX
             </button>
+            <span style="cursor: pointer"
+              title="Add another serial range if multiple cut-ins exist"
+            >
+            &#9432;</span>
           </div>
           <div id="sectionContainerFSXX">
             <div class="sectionTitle">
@@ -549,12 +597,16 @@
                 <div id="exceptionSectionStartFSXX"></div>
                 <button
                   class="exceptionButton"
-                  title="An exception is a serial number outside the set range where the Display description still applies"
+                  title="An exception is a serial number outside the set range where the description still applies"
                   type="button"
                   value="exceptionSectionStartFSXX"
                 >
                   Add exception
                 </button>
+                <span style="cursor: pointer"
+                  title="An exception is a serial number outside the set range where the description still applies"
+                >
+                &#9432;</span>
                 <div class="rangeTextAreaContainer">
                   <label class="rangeLabel">Description for pre cut-in range</label>
                   <textarea
@@ -593,12 +645,16 @@
                 <div id="exceptionSectionEndFSXX"></div>
                 <button
                   class="exceptionButton"
-                  title="An exception is a serial number outside the set range where the Display description still applies"
+                  title="An exception is a serial number outside the set range where the description still applies"
                   type="button"
                   value="exceptionSectionEndFSXX"
                 >
                   Add exception
                 </button>
+                <span style="cursor: pointer"
+                  title="An exception is a serial number outside the set range where the description still applies"
+                >
+                &#9432;</span>
                 <div class="rangeTextAreaContainer">
                   <label class="rangeLabel">Description for post cut-in range</label>
                   <textarea
@@ -614,12 +670,16 @@
             <button
               class="rangeButton"
               type="button"
-              title="Add another serial range if 3 or more descriptions need to be displayed for the cut-in"
+              title="Add another serial range if multiple cut-ins exist"
               value="rangesContainerFSXX"
               id="addRangeButtonFSXX"
             >
               Add an intermediate serial number range for FSXX
             </button>
+            <span style="cursor: pointer"
+              title="Add another serial range if multiple cut-ins exist"
+            >
+            &#9432;</span>
           </div>
           <div id="sectionContainerFAHX">
             <div class="sectionTitle">
@@ -662,12 +722,16 @@
                 <div id="exceptionSectionStartFAHX"></div>
                 <button
                   class="exceptionButton"
-                  title="An exception is a serial number outside the set range where the Display description still applies"
+                  title="An exception is a serial number outside the set range where the description still applies"
                   type="button"
                   value="exceptionSectionStartFAHX"
                 >
                   Add exception
                 </button>
+                <span style="cursor: pointer"
+                  title="An exception is a serial number outside the set range where the description still applies"
+                >
+                &#9432;</span>
                 <div class="rangeTextAreaContainer">
                   <label class="rangeLabel">Description for pre cut-in range</label>
                   <textarea
@@ -706,12 +770,16 @@
                 <div id="exceptionSectionEndFAHX"></div>
                 <button
                   class="exceptionButton"
-                  title="An exception is a serial number outside the set range where the Display description still applies"
+                  title="An exception is a serial number outside the set range where the description still applies"
                   type="button"
                   value="exceptionSectionEndFAHX"
                 >
                   Add exception
                 </button>
+                <span style="cursor: pointer"
+                  title="An exception is a serial number outside the set range where the description still applies"
+                >
+                &#9432;</span>
                 <div class="rangeTextAreaContainer">
                   <label class="rangeLabel">Description for post cut-in range</label>
                   <textarea
@@ -727,12 +795,16 @@
             <button
               class="rangeButton"
               type="button"
-              title="Add another serial range if 3 or more descriptions need to be displayed for the cut-in"
+              title="Add another serial range if multiple cut-ins exist"
               value="rangesContainerFAHX"
               id="addRangeButtonFAHX"
             >
               Add an intermediate serial number range for FAHX
             </button>
+            <span style="cursor: pointer"
+              title="Add another serial range if multiple cut-ins exist"
+            >
+            &#9432;</span>
           </div>
           <div id="sectionContainerFBHX">
             <div class="sectionTitle">
@@ -775,12 +847,16 @@
                 <div id="exceptionSectionStartFBHX"></div>
                 <button
                   class="exceptionButton"
-                  title="An exception is a serial number outside the set range where the Display description still applies"
+                  title="An exception is a serial number outside the set range where the description still applies"
                   type="button"
                   value="exceptionSectionStartFBHX"
                 >
                   Add exception
                 </button>
+                <span style="cursor: pointer"
+                  title="An exception is a serial number outside the set range where the description still applies"
+                >
+                &#9432;</span>
                 <div class="rangeTextAreaContainer">
                   <label class="rangeLabel">Description for pre cut-in range</label>
                   <textarea
@@ -819,12 +895,16 @@
                 <div id="exceptionSectionEndFBHX"></div>
                 <button
                   class="exceptionButton"
-                  title="An exception is a serial number outside the set range where the Display description still applies"
+                  title="An exception is a serial number outside the set range where the description still applies"
                   type="button"
                   value="exceptionSectionEndFBHX"
                 >
                   Add exception
                 </button>
+                <span style="cursor: pointer"
+                  title="An exception is a serial number outside the set range where the description still applies"
+                >
+                &#9432;</span>
                 <div class="rangeTextAreaContainer">
                   <label class="rangeLabel">Description for post cut-in range</label>
                   <textarea
@@ -840,12 +920,16 @@
             <button
               class="rangeButton"
               type="button"
-              title="Add another serial range if 3 or more descriptions need to be displayed for the cut-in"
+              title="Add another serial range if multiple cut-ins exist"
               value="rangesContainerFBHX"
               id="addRangeButtonFBHX"
             >
               Add an intermediate serial number range for FBHX
             </button>
+            <span style="cursor: pointer"
+              title="Add another serial range if multiple cut-ins exist"
+            >
+            &#9432;</span>
           </div>
           <div id="sectionContainerFAMH">
             <div class="sectionTitle">
@@ -888,12 +972,16 @@
                 <div id="exceptionSectionStartFAMH"></div>
                 <button
                   class="exceptionButton"
-                  title="An exception is a serial number outside the set range where the Display description still applies"
+                  title="An exception is a serial number outside the set range where the description still applies"
                   type="button"
                   value="exceptionSectionStartFAMH"
                 >
                   Add exception
                 </button>
+                <span style="cursor: pointer"
+                  title="An exception is a serial number outside the set range where the description still applies"
+                >
+                &#9432;</span>
                 <div class="rangeTextAreaContainer">
                   <label class="rangeLabel">Description for pre cut-in range</label>
                   <textarea
@@ -932,12 +1020,16 @@
                 <div id="exceptionSectionEndFAMH"></div>
                 <button
                   class="exceptionButton"
-                  title="An exception is a serial number outside the set range where the Display description still applies"
+                  title="An exception is a serial number outside the set range where the description still applies"
                   type="button"
                   value="exceptionSectionEndFAMH"
                 >
                   Add exception
                 </button>
+                <span style="cursor: pointer"
+                  title="An exception is a serial number outside the set range where the description still applies"
+                >
+                &#9432;</span>
                 <div class="rangeTextAreaContainer">
                   <label class="rangeLabel">Description for post cut-in range</label>
                   <textarea
@@ -953,12 +1045,16 @@
             <button
               class="rangeButton"
               type="button"
-              title="Add another serial range if 3 or more descriptions need to be displayed for the cut-in"
+              title="Add another serial range if multiple cut-ins exist"
               value="rangesContainerFAMH"
               id="addRangeButtonFAMH"
             >
               Add an intermediate serial number range for FAMH
             </button>
+            <span style="cursor: pointer"
+              title="Add another serial range if multiple cut-ins exist"
+            >
+            &#9432;</span>
           </div>
           <div id="sectionContainerFBMH">
             <div class="sectionTitle">
@@ -1001,12 +1097,16 @@
                 <div id="exceptionSectionStartFBMH"></div>
                 <button
                   class="exceptionButton"
-                  title="An exception is a serial number outside the set range where the Display description still applies"
+                  title="An exception is a serial number outside the set range where the description still applies"
                   type="button"
                   value="exceptionSectionStartFBMH"
                 >
                   Add exception
                 </button>
+                <span style="cursor: pointer"
+                  title="An exception is a serial number outside the set range where the description still applies"
+                >
+                &#9432;</span>
                 <div class="rangeTextAreaContainer">
                   <label class="rangeLabel">Description for pre cut-in range</label>
                   <textarea
@@ -1045,12 +1145,16 @@
                 <div id="exceptionSectionEndFBMH"></div>
                 <button
                   class="exceptionButton"
-                  title="An exception is a serial number outside the set range where the Display description still applies"
+                  title="An exception is a serial number outside the set range where the description still applies"
                   type="button"
                   value="exceptionSectionEndFBMH"
                 >
                   Add exception
                 </button>
+                <span style="cursor: pointer"
+                  title="An exception is a serial number outside the set range where the description still applies"
+                >
+                &#9432;</span>
                 <div class="rangeTextAreaContainer">
                   <label class="rangeLabel">Description for post cut-in range</label>
                   <textarea
@@ -1066,12 +1170,16 @@
             <button
               class="rangeButton"
               type="button"
-              title="Add another serial range if 3 or more descriptions need to be displayed for the cut-in"
+              title="Add another serial range if multiple cut-ins exist"
               value="rangesContainerFBMH"
               id="addRangeButtonFBMH"
             >
               Add an intermediate serial number range for FBMH
             </button>
+            <span style="cursor: pointer"
+              title="Add another serial range if multiple cut-ins exist"
+            >
+            &#9432;</span>
           </div>
           <button class="submitButton" type="submit">Submit</button>
         </form>
