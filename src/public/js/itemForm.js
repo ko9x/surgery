@@ -681,7 +681,7 @@ function addRangeField(rangeField) {
     rangeContainer.appendChild(rangeTextAreaContainer);
 
     // Append the rangeContainer to the hard coded rangeSection div in the HTML
-    rangeSection.insertBefore(rangeContainer, rangeSection.childNodes[2]);
+    rangeSection.insertBefore(rangeContainer, rangeSection.childNodes[rangeSection.children.length]);
 
     // Append the onclick function to the button after all other appends are done so the parent and child elements exist
     rangeRemoveButton.onclick = () =>
