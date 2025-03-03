@@ -286,14 +286,17 @@ function userCollapseSection(sectionId) {
         `rangesContainer${configChars}`
     );
     const addRangeButton = document.getElementById(`addRangeButton${configChars}`);
+    const rangeButtonInfo = document.getElementById(`rangeButtonInfo${configChars}`);
     const collapseText = document.getElementById(sectionId);
     if (collapseSection.classList.contains("hideElement")) {
         collapseSection.classList.remove("hideElement");
         addRangeButton.classList.remove('hideElement');
+        rangeButtonInfo.classList.remove('hideElement');
         collapseText.innerHTML = "(collapse section)";
     } else {
         collapseSection.classList.add("hideElement");
         addRangeButton.classList.add('hideElement');
+        rangeButtonInfo.classList.add('hideElement');
         collapseText.innerHTML = "(show section)";
     }
 }

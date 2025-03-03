@@ -56,7 +56,7 @@
                 type="button"
                 id="sectionTitleF9XX"
               >
-                (collapse section)
+                (hide section)
               </button>
             </div>
             <p hidden id="errorTextF9XX"></p>
@@ -178,6 +178,7 @@
             </button>
             <span style="cursor: pointer"
               title="Add another serial range if multiple cut-ins exist"
+              id="rangeButtonInfoF9XX"
             >
             &#9432;</span>
           </div>
@@ -190,7 +191,7 @@
                 type="button"
                 id="sectionTitleF2XX"
               >
-                (collapse section)
+                (hide section)
               </button>
             </div>
             <p hidden id="errorTextF2XX"></p>
@@ -303,6 +304,7 @@
             </button>
             <span style="cursor: pointer"
               title="Add another serial range if multiple cut-ins exist"
+              id="rangeButtonInfoF2XX"
             >
             &#9432;</span>
           </div>
@@ -315,7 +317,7 @@
                 type="button"
                 id="sectionTitleFAXX"
               >
-                (collapse section)
+                (hide section)
               </button>
             </div>
             <p hidden id="errorTextFAXX"></p>
@@ -428,6 +430,7 @@
             </button>
             <span style="cursor: pointer"
               title="Add another serial range if multiple cut-ins exist"
+              id="rangeButtonInfoFAXX"
             >
             &#9432;</span>
           </div>
@@ -440,7 +443,7 @@
                 type="button"
                 id="sectionTitleFBXX"
               >
-                (collapse section)
+                (hide section)
               </button>
             </div>
             <p hidden id="errorTextFBXX"></p>
@@ -553,6 +556,7 @@
             </button>
             <span style="cursor: pointer"
               title="Add another serial range if multiple cut-ins exist"
+              id="rangeButtonInfoFBXX"
             >
             &#9432;</span>
           </div>
@@ -565,7 +569,7 @@
                 type="button"
                 id="sectionTitleFSXX"
               >
-                (collapse section)
+                (hide section)
               </button>
             </div>
             <p hidden id="errorTextFSXX"></p>
@@ -678,6 +682,7 @@
             </button>
             <span style="cursor: pointer"
               title="Add another serial range if multiple cut-ins exist"
+              id="rangeButtonInfoFSXX"
             >
             &#9432;</span>
           </div>
@@ -690,7 +695,7 @@
                 type="button"
                 id="sectionTitleFAHX"
               >
-                (collapse section)
+                (hide section)
               </button>
             </div>
             <p hidden id="errorTextFAHX"></p>
@@ -803,6 +808,7 @@
             </button>
             <span style="cursor: pointer"
               title="Add another serial range if multiple cut-ins exist"
+              id="rangeButtonInfoFAHX"
             >
             &#9432;</span>
           </div>
@@ -815,7 +821,7 @@
                 type="button"
                 id="sectionTitleFBHX"
               >
-                (collapse section)
+                (hide section)
               </button>
             </div>
             <p hidden id="errorTextFBHX"></p>
@@ -928,6 +934,7 @@
             </button>
             <span style="cursor: pointer"
               title="Add another serial range if multiple cut-ins exist"
+              id="rangeButtonInfoFBHX"
             >
             &#9432;</span>
           </div>
@@ -940,7 +947,7 @@
                 type="button"
                 id="sectionTitleFAMH"
               >
-                (collapse section)
+                (hide section)
               </button>
             </div>
             <p hidden id="errorTextFAMH"></p>
@@ -1053,6 +1060,7 @@
             </button>
             <span style="cursor: pointer"
               title="Add another serial range if multiple cut-ins exist"
+              id="rangeButtonInfoFAMH"
             >
             &#9432;</span>
           </div>
@@ -1065,7 +1073,7 @@
                 type="button"
                 id="sectionTitleFBMH"
               >
-                (collapse section)
+                (hide section)
               </button>
             </div>
             <p hidden id="errorTextFBMH"></p>
@@ -1178,6 +1186,7 @@
             </button>
             <span style="cursor: pointer"
               title="Add another serial range if multiple cut-ins exist"
+              id="rangeButtonInfoFBMH"
             >
             &#9432;</span>
           </div>
