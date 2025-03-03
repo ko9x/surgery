@@ -174,7 +174,6 @@ function checkRangeCoverage(ranges) {
             let config = ranges[i].name;
             // Check for overlap (Used for an outdated cutin range for HV Cables. No cutins should ever have overlap)
             // if (ranges[i].starts_at === ranges[i + 1].starts_at) {
-            //     console.log('overlap detected', ); //@DEBUG
             //     while (
             //         ranges[i + indexCounter] &&
             //         ranges[i + indexCounter].name === config
@@ -300,7 +299,7 @@ function userCollapseSection(sectionId) {
 }
 
 function verifyExceptionOutOfRange(focusedException) {
-    console.log('focusedException',focusedException.value); //@DEBUG
+    // I don't think this function in necessary but it's wired up if we ever decide to create it.
 }
 
 // Once the user enters a valid serial number in an input, find the sibling and fill it with the start or end of the next range
@@ -469,6 +468,9 @@ function addExceptionField(exceptionField) {
 
     // Append the exceptionInputContainer to the exceptionSection
     exceptionSection.appendChild(exceptionInputContainer);
+
+    // Move the cursor to the exception input field
+    exceptionInput.focus();
 
     // Append the onclick function to the button after all other appends are done so the parent and child elements exist
     removeExceptionButton.onclick = () =>
