@@ -1,15 +1,12 @@
 ### Current Focus
-* Test the advanced form functionality
-    * Add a pop-up when user presses add intermediate range button warning them to enter serials accurately?
-* Test the findAndFillSibling funciton work with intermediate ranges including exceptions
-* Add a message if the user has introduced an overlap and make it obvious this should be avoided if possible    
-* Try to think of edge cases where the advanced form could cause issues
-
-* Continue making sure exceptions are after the ends_at or before the starts_at number
-    * Is this completely necessary?
-    * Add an alert/info button/hover thing that explains what an exception is
-
+* Get the app on the server
+    * seanmcgillis.com/elite/information
+    * seanmcgillis.com/elite/form
+        * This path needs to be easily turned on and off
+    * seanmcgillis.com/elite/manage
+        * This path needs to be easily turned on and off
 * Enter some known good cut-ins and make a database file backup
+    * Try to think of/find edge cases where intermediate ranges could cause issues
     * Test that the backup can be pushed while the app is on the server
         * Then enter all the know good cut-ins and create a backup to push to the server
             * also email it to myself and maybe Blake and Cristian just so there are lots of failsafes
@@ -93,3 +90,6 @@
     * Create a function in the APIService that will send the id and new name to the backend edit the name
     * Show an alert that says the name has been updated
 * Add advanced form funcitonality
+* Test the findAndFillSibling funciton work with intermediate ranges including exceptions
+* Test the advanced form functionality
+    * Add a pop-up when user presses add intermediate range button warning them to enter serials accurately?
