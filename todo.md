@@ -1,27 +1,27 @@
 ### Current Focus
-* Get the app on the server
-    * seanmcgillis.com/elite/information
-    * seanmcgillis.com/elite/form
-        * This path needs to be easily turned on and off
-    * seanmcgillis.com/elite/manage
-        * This path needs to be easily turned on and off
+* Test all the functions!
+    * Some stuff on the server may still be broken from trying to get this working
+* Create an easy way to activate and deactivate the item form and manage page
+    * Also remove the links from the information page.
 * Enter some known good cut-ins and make a database file backup
-    * Try to think of/find edge cases where intermediate ranges could cause issues
     * Test that the backup can be pushed while the app is on the server
         * Then enter all the know good cut-ins and create a backup to push to the server
             * also email it to myself and maybe Blake and Cristian just so there are lots of failsafes
-* Secure the route to the itemForm and the manageItems view
-    * For now we are going to do this by commenting out the path that hits the item form and manage items pages
+* Figure out how to backup the remote app on github
+* Make some notes about what we did to get the app working on the remote server
+    * Make them here in the todo/readme and on MyNotes if it seems necessary
+        * Note about how the alias made the api impossible to hit
+        * Anything else?
+* Clean up the config file and maybe try adding the other web pages back like My Notes
+
+### What to do later
 * Validate the item information here on the backend before storing it to the database
     * Make sure all the ranges are covered and that sort of thing
 * Fix the styling and functionality for small screens for all views
     * The manage items view user a hover to show the buttons for desktop.
         * We will need to check if the user is on mobile and then add a click listener instead
-    * The links to go to the other pages don't work on mobile because they use localhost not the ip address
-        * The database also cannot be accessed on mobile because the api uses localhost not the ip address
-            * This won't be an issue once the app is on the server
-
-### What to do later
+* Secure the route to the itemForm and the manageItems view
+    * For now we are going to do this by commenting out the path that hits the item form and manage items pages
 * Make a login form
     * Once the user is logged in they will have access to the information view, the itemForm view and the manageItems view
     * The information page will be the default page with a button that says "Login"
@@ -93,3 +93,4 @@
 * Test the findAndFillSibling funciton work with intermediate ranges including exceptions
 * Test the advanced form functionality
     * Add a pop-up when user presses add intermediate range button warning them to enter serials accurately?
+* Figure out how to wire up the remote database
