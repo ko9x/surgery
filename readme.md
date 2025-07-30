@@ -1,23 +1,4 @@
-### Running the project
-* Laravel version
-    * Laravel Framework 9.52.8
-    * Use command `php artisan --version` to see Laravel version
-        * You must be in the Laravel project root, which is the src folder for this project
-* Ubuntu version (on server)
-    * Description:	Ubuntu 24.04.1 LTS
-    * Release:	24.04
-    * Codename:	noble
-    * use command `lsb_release -a` to see Ubuntu version
-* mysql version (on server)
-    * Server version: 8.0.41-0ubuntu0.24.04.1 (Ubuntu)
-    * use command `mysql -u sean -p` to log into mysql, and it will automatically show you the version
-* PHP version
-    * PHP 8.3.6 (cli) (built: Dec  2 2024 12:36:18) (NTS)
-    * Copyright (c) The PHP Group
-    * Zend Engine v4.3.6, Copyright (c) Zend Technologies
-        * with Zend OPcache v8.3.6, Copyright (c), by Zend Technologies
-    * Use command `php -v`
-
+### Running the project locally
 * Make sure Docker Desktop is running
 
 * To spin up the docker container, navigate to the root directory of this project in terminal (which should be development/docker-projects/surgery) and run this command:
@@ -25,6 +6,7 @@
     * Once the container is running navigate to localhost:8080
 * To shut down the docker container, navigate to the root directory of this project in terminal and run this command:
     * `docker compose down`
+* In the browser navigate to localhost:8080
 
 ### Other useful commands
 * To ssh into the php-apache docker container, navigate to the root directory of this project in terminal and run this command:
@@ -57,6 +39,26 @@
                 * `psql -U postgres cutin-finder`
                     * From here you can do things like run an SQL query on the items table with this command:
                         * `SELECT * FROM items;`
+
+### Server information
+    * Laravel version
+    * Laravel Framework 9.52.8
+    * Use command `php artisan --version` to see Laravel version
+        * You must be in the Laravel project root, which is the src folder for this project
+* Ubuntu version (on server)
+    * Description:	Ubuntu 24.04.1 LTS
+    * Release:	24.04
+    * Codename:	noble
+    * use command `lsb_release -a` to see Ubuntu version
+* mysql version (on server)
+    * Server version: 8.0.41-0ubuntu0.24.04.1 (Ubuntu)
+    * use command `mysql -u sean -p` to log into mysql, and it will automatically show you the version
+* PHP version
+    * PHP 8.3.6 (cli) (built: Dec  2 2024 12:36:18) (NTS)
+    * Copyright (c) The PHP Group
+    * Zend Engine v4.3.6, Copyright (c) Zend Technologies
+        * with Zend OPcache v8.3.6, Copyright (c), by Zend Technologies
+    * Use command `php -v`
 
 ### Notes
 * To get the api to accept requests from Postman I had to edit the .htaccess file
