@@ -29,23 +29,22 @@ Route::post("item", [ItemController::class, 'store']);
 Route::get("items", [ItemController::class, 'allItems']);
 
 // Get all the items in the items table for a specific configuration. Also grab all the ranges that have the same config name
-Route::get("item/{name}", [ItemController::class, 'index']);
+Route::get("items/{name}", [ItemController::class, 'index']);
 
 // Destroy the item matching the id in the path
 Route::delete("item/{id}", [ItemController::class, 'destroy']);
 
 // Edit the item matching the id in the path
-Route::put("item/{id}", [ItemController::class, 'update']);
+Route::put("item/{id}", [ItemController::class, 'update'])->middleware('auth.basic');
+
+// Get an item by id from the item table. We also grab all the ranges and exceptions with that item_id
+Route::get("item/{id}", [ItemController::class, 'show']);
 
 // This is just a route for a test function 
 Route::post("item/add",[ItemController::class, 'add']);
 
 // This is just a route for a test function 
 Route::get("item/try",[ItemController::class, 'try']);
-
-// Get an item by id from the item table. We also grab all the ranges with that item_id
-// We don't really need this and the route conflicts with the index that we do need to use
-// Route::get("item/{id}", [ItemController::class, 'show']);
 
 // RangeController routes *********************************************************************
 // Store the range in the ranges table. We pass the item_id so it can be added to the item_id column in the ranges table
