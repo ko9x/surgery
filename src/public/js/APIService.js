@@ -16,7 +16,7 @@ export async function getAllItems() {
 }
 
 export async function getItems(config) {
-    let response = await fetch(`${API}/item/${config}`);
+    let response = await fetch(`${API}/items/${config}`);
 
     let data = await response.json();
 
@@ -44,6 +44,16 @@ export async function storeItem(data) {
     } else {
         // Don't clear the form when the user clicks the "ok" button in the success = false alert
         alert(`Something went wrong`);
+    }
+}
+
+export async function getItem(id) {
+    let response = await fetch(`${API}/item/${id}`);
+
+    let data = await response.json();
+
+    if(data?.success) {
+        return data.item;
     }
 }
 
