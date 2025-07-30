@@ -2,6 +2,7 @@ import { getAllItems, deleteItem, editItem } from "./APIService.js";
 import { isSmall, handleLayout, createBottomResultsArea } from "./common.js";
 
 const items = await getAllItems();
+localStorage.removeItem('itemID');
 
 // Create a bottomResultItemContainer for each item we get back from the database
 for (var i = 0; i < items.length; i++) {
@@ -40,15 +41,7 @@ for (var i = 0; i < bottomResultContainer.length; i++) {
                 e.target.appendChild(buttonContainer);
                 editItemButton.addEventListener('click', (e) => {
                     let itemId = e.target.parentNode.parentNode.id;
-                    let newName = prompt("Please enter a new name for the item");
-                    if(newName === null) {
-                        return;
-                    }
-                    if(newName && newName.length > 7) {
-                        editItem(itemId, {name: newName});
-                    } else {
-                        alert('Please enter a valid item name that is at least 7 characters long.')
-                    }
+                    storeIdAndRedirect(itemId)
                 });
                 removeItemButton.addEventListener('click', (e) => {
                     let itemId = e.target.parentNode.parentNode.id;
@@ -61,6 +54,13 @@ for (var i = 0; i < bottomResultContainer.length; i++) {
             }
         }
     });
+
+    // Stores the id of the item the users wants to edit and redirects to the itemForm route
+    function storeIdAndRedirect(id) {
+        localStorage.setItem('itemID', id);
+        window.location.replace('http://localhost:8080/itemForm')
+    }
+
     bottomResultContainer[i].addEventListener("mouseleave", (e) => {
         // Check to make sure we haven't already removed the buttonContainer
         if (e.target.childNodes.length > 2) {
