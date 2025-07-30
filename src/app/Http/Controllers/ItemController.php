@@ -74,7 +74,7 @@ class ItemController extends Controller
         }
     }
 
-    // We don't use this function. We use the index function so we grab all the items not just a single one.
+    // Grab a single item referenced by the id and return all associated ranges and exceptions
     function show($id) {
         $item = Item::find($id);
 
@@ -82,8 +82,15 @@ class ItemController extends Controller
             return response()->json(['success' => false, 'error' => 'No item found.' ]);
         }
 
-        //Call ranges on item to make sure they're included on the item object in the response
-        $item->ranges;
+        // Call ranges on item to make sure they're included on the item object in the response
+        $item->ranges = DB::table('ranges')
+                ->where('item_id', '=', $item->id)
+                ->get();
+                
+        // Call exceptions on item to make sure they're included on the item object in the response
+        $item->exceptions = DB::table('exceptions')
+                ->where('item_id', '=', $item->id)
+                ->get();
 
         if (!$item) {
             return response()->json(['success' => true, 'error' => 'Item not found' ]);
