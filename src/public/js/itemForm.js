@@ -718,26 +718,27 @@ function flashNewRangeContainer(itemToFlash) {
     }, 100);
 }
 
-// Used for editing functionality
+// Used for edit functionality
 async function populateFormWithEditItem() {
     let editItem = await getItem(itemID)
     console.log('editItem', editItem); //@DEBUG
+
+    // display the SSO of the user who created the item
+    let creator = document.getElementById('creator');
+    creator.value = editItem.creator;
 
     // display the name of the item the user is editing 
     let itemName = document.getElementById('itemName');
     itemName.value = editItem.name;
 
-    // display the SSO of the user who created the item
-    let creator = document.getElementById('creator');
-    creator.value = editItem.creator;
-    // populate the default range containers with starts at, ends at, and descriptions
+    // Create the itemRanges array
     let itemRanges = [];
     for (var config of configs) {
         let itemRange = document.getElementsByClassName(config.code);
         itemRanges.push(itemRange)
         // console.log('itemRanges', itemRanges[0]); //@DEBUG
 
-        for (var range of itemRanges) {
+        // for (var range of itemRanges) {
             // console.log('range', range)
             // var rangeInputs = range.getElementsByTagName("input");
             // var rangeTextarea = range.getElementsByTagName("textarea")[0].value;
@@ -763,35 +764,56 @@ async function populateFormWithEditItem() {
             //     };
             //     exceptions.push(exceptionObj);
             // }
-        }
+        // }
     }
 
 
-console.log(itemRanges[0]);
+// console.log(itemRanges[0]);
 
-let mainRange = itemRanges[0];
+// let mainRange = itemRanges[0];
 
-var firstRanges = mainRange[0].getElementsByTagName("input");
-var firstRangeTextarea = mainRange[0].getElementsByTagName("textarea")[0];
-var lastRanges = mainRange[1].getElementsByTagName("input");
-var lastRangeTextarea = mainRange[1].getElementsByTagName("textarea")[0];
+// var firstRanges = mainRange[0].getElementsByTagName("input");
+// var firstRangeTextarea = mainRange[0].getElementsByTagName("textarea")[0];
+// var lastRanges = mainRange[1].getElementsByTagName("input");
+// var lastRangeTextarea = mainRange[1].getElementsByTagName("textarea")[0];
 
-var firstRangeEndsAt = firstRanges[1];
-var lastRangeStartsAt = lastRanges[0];
+// var firstRangeEndsAt = firstRanges[1];
+// var lastRangeStartsAt = lastRanges[0];
 
-firstRangeEndsAt.value = editItem.ranges[0].ends_at
-lastRangeStartsAt.value = editItem.ranges[1].starts_at
-firstRangeTextarea.value = editItem.ranges[0].details
-lastRangeTextarea.value = editItem.ranges[1].details
+// firstRangeEndsAt.value = editItem.ranges[0].ends_at
+// lastRangeStartsAt.value = editItem.ranges[1].starts_at
+// firstRangeTextarea.value = editItem.ranges[0].details
+// lastRangeTextarea.value = editItem.ranges[1].details
 
-console.log('firstRangeEndsAt', firstRangeEndsAt); //@DEBUG
-console.log('lastRangeStartsAt', lastRangeStartsAt); //@DEBUG
-console.log('firstRangeTextarea', firstRangeTextarea); //@DEBUG
+// console.log('firstRangeEndsAt', firstRangeEndsAt); //@DEBUG
+// console.log('lastRangeStartsAt', lastRangeStartsAt); //@DEBUG
+// console.log('firstRangeTextarea', firstRangeTextarea); //@DEBUG
 
+// populate the default range containers with starts at, ends at, and descriptions
+for(var i = 0; i < itemRanges.length; i++) {
+    let currentRange = itemRanges[i]
 
-// for(var i = 0; i < itemRanges.length; i++) {
-    
-//   };
+    var firstRanges = currentRange[0].getElementsByTagName("input");
+    var firstRangeTextarea = currentRange[0].getElementsByTagName("textarea")[0];
+    var lastRanges = currentRange[1].getElementsByTagName("input");
+    var lastRangeTextarea = currentRange[1].getElementsByTagName("textarea")[0];
+
+    var firstRangeEndsAt = firstRanges[1];
+    var lastRangeStartsAt = lastRanges[0];
+
+    editItem.ranges.forEach((range) => {
+        if(range.starts_at === `${configs[i].code}XX00001` || range.starts_at === `${configs[i].code}XE00001`) {
+            firstRangeEndsAt.value = range.ends_at
+            firstRangeTextarea.value = range.details
+        }
+    })
+    editItem.ranges.forEach((range) => {
+        if(range.ends_at === `${configs[i].code}TX99999` || range.ends_at === `${configs[i].code}TE99999`) {
+            lastRangeStartsAt.value = range.starts_at
+            lastRangeTextarea.value = range.details
+        }
+    })
+};
 
 // for(var i = 0; i < addRanges.length; i++) {
 //     addRanges[i].addEventListener("click", (e) => {
