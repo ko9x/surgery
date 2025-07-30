@@ -1,4 +1,4 @@
-import { storeItem } from "./APIService.js";
+import { storeItem, getItem } from "./APIService.js";
 import { isSmall, configs } from "./common.js";
 
 const container = document.getElementById("container");
@@ -14,6 +14,11 @@ const watchEndsAt = document.querySelectorAll(".ends_at");
 const watchStartsAt = document.querySelectorAll(".starts_at");
 
 const addRanges = document.querySelectorAll(".rangeButton");
+
+let itemID = localStorage.getItem('itemID')
+if(itemID) {
+    populateFormWithEditItem()
+}
 
 //  Event Listeners Section **************************************************************
 
@@ -703,6 +708,7 @@ function addRangeField(rangeField) {
 
 }
 
+// Makes it more obvious when a new range container is added
 function flashNewRangeContainer(itemToFlash) {
     itemToFlash.style.backgroundColor = "rgba(100, 0, 160, 0.1)";
     itemToFlash.style.color = "white";
@@ -710,4 +716,96 @@ function flashNewRangeContainer(itemToFlash) {
         itemToFlash.style.color = "black";
         itemToFlash.style.backgroundColor = "white";
     }, 100);
+}
+
+// Used for editing functionality
+async function populateFormWithEditItem() {
+    let editItem = await getItem(itemID)
+    console.log('editItem', editItem); //@DEBUG
+
+    // display the name of the item the user is editing 
+    let itemName = document.getElementById('itemName');
+    itemName.value = editItem.name;
+
+    // display the SSO of the user who created the item
+    let creator = document.getElementById('creator');
+    creator.value = editItem.creator;
+    // populate the default range containers with starts at, ends at, and descriptions
+    let itemRanges = [];
+    for (var config of configs) {
+        let itemRange = document.getElementsByClassName(config.code);
+        itemRanges.push(itemRange)
+        // console.log('itemRanges', itemRanges[0]); //@DEBUG
+
+        for (var range of itemRanges) {
+            // console.log('range', range)
+            // var rangeInputs = range.getElementsByTagName("input");
+            // var rangeTextarea = range.getElementsByTagName("textarea")[0].value;
+
+            // let rangeObj = {
+            //     name: config.code,
+            //     starts_at: rangeInputs[0].value.toUpperCase(),
+            //     ends_at: rangeInputs[1].value.toUpperCase(),
+            //     details: rangeTextarea,
+            // };
+            // ranges.push(rangeObj);
+
+            // // We reference the exception by ClassName because the ById and ByName methods only exist on the document object
+            // // The getElementsByClassName method exists on all HTML elements
+            // var exceptionInputs = range.getElementsByClassName("exception");
+
+            // // Group each exception with the corresponding range information and add the object to the exceptions array
+            // for (var exceptionInput of exceptionInputs) {
+            //     let exceptionObj = {
+            //         name: config.code,
+            //         serial: exceptionInput.value.toUpperCase(),
+            //         details: rangeTextarea,
+            //     };
+            //     exceptions.push(exceptionObj);
+            // }
+        }
+    }
+
+
+console.log(itemRanges[0]);
+
+let mainRange = itemRanges[0];
+
+var firstRanges = mainRange[0].getElementsByTagName("input");
+var firstRangeTextarea = mainRange[0].getElementsByTagName("textarea")[0];
+var lastRanges = mainRange[1].getElementsByTagName("input");
+var lastRangeTextarea = mainRange[1].getElementsByTagName("textarea")[0];
+
+var firstRangeEndsAt = firstRanges[1];
+var lastRangeStartsAt = lastRanges[0];
+
+firstRangeEndsAt.value = editItem.ranges[0].ends_at
+lastRangeStartsAt.value = editItem.ranges[1].starts_at
+firstRangeTextarea.value = editItem.ranges[0].details
+lastRangeTextarea.value = editItem.ranges[1].details
+
+console.log('firstRangeEndsAt', firstRangeEndsAt); //@DEBUG
+console.log('lastRangeStartsAt', lastRangeStartsAt); //@DEBUG
+console.log('firstRangeTextarea', firstRangeTextarea); //@DEBUG
+
+
+// for(var i = 0; i < itemRanges.length; i++) {
+    
+//   };
+
+// for(var i = 0; i < addRanges.length; i++) {
+//     addRanges[i].addEventListener("click", (e) => {
+//       addRangeField(e.target.value);
+//     });
+//   };
+
+
+    // let defaultF9XX = document.getElementById('rangesContainerF9XX');
+    // let defaultEndAt = defaultF9XX.children[0].children[0].children[1].children[1];
+    // defaultEndAt.value = 'F9XXXX00200'
+// console.log('defaultF9XX', defaultF9XX.children[0].children[0].children[1].children[1]); //@DEBUG
+    // create new range containers if needed and populate the starts at, ends at and descriptions
+
+    // create exceptions if needed and populate with serial number in the correct range
+        // I think we are going to create a range id property to relate exceptions with the appropriate range
 }
