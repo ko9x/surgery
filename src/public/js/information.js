@@ -14,6 +14,9 @@ const resultSection = document.getElementById("resultSection");
 const topResultLabel = document.getElementById("topResultLabel");
 const topResultContent = document.getElementById("topResultContent");
 
+// Remove the locally stored itemID if there was one 
+localStorage.removeItem('itemID');
+
 hideResultsSection();
 handleLayout(
     "Elite System Information",

@@ -2,6 +2,8 @@ import { getAllItems, deleteItem, editItem } from "./APIService.js";
 import { isSmall, handleLayout, createBottomResultsArea } from "./common.js";
 
 const items = await getAllItems();
+
+// Remove the locally stored itemID if there was one 
 localStorage.removeItem('itemID');
 
 // Create a bottomResultItemContainer for each item we get back from the database
