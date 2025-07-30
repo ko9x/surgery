@@ -16,10 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/itemForm', function () {
     return view('itemForm');
 });
+// })->middleware('auth.basic');
+// Commented out basic auth because I apparently don't know the password for the dev instance
 
 Route::get('/manageItems', function () {
     return view('manageItems');
 });
+// })->middleware('auth.basic');
+// Commented out basic auth because I apparently don't know the password for the dev instance
 
 Route::get('/', function () {
     return view('information');
