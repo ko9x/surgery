@@ -1,5 +1,6 @@
 // API using localhost
 const API = 'http://localhost:8080/api'
+// const API = 'https://www.seanmcgillis.com/api'
 
 // API using MacBook IP Address (So I can test on my iphone)
 // const API = 'http://192.168.0.17:8080/api'
@@ -63,6 +64,7 @@ export async function deleteItem(id) {
 export async function editItem(id, data) {
     let response = await fetch(`${API}/item/${id}`, {
         method: "PUT",
+        credentials: 'include',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
