@@ -542,11 +542,14 @@ function verifyOverlapOrder(controlString, checkString, config) {
 let initialRangeAdded = false;
 
 // Add another range to the form that is styled correctly and in the correct location
-function addRangeField(rangeField) {
+function addRangeField(rangeField, rangeObj) {
     if (!initialRangeAdded) {
         initialRangeAdded = true;
-        // A warning popup alerting the user to the dangers of adding an intermediate range
-        alert("Warning! Adding an intermediate range greatly increases the potential for serial number gaps and overlaps. Ensure all serial number ranges are entered correctly with no gaps or overlapping ranges.");
+        if(!rangeObj) {
+            // A warning popup alerting the user to the dangers of adding an intermediate range. Not used in edit form
+            alert("Warning! Adding an intermediate range greatly increases the potential for serial number gaps and overlaps. Ensure all serial number ranges are entered correctly with no gaps or overlapping ranges.");
+        }
+        
     }
     // The id from the button is passed in so we know where to add the new range field
     const rangeSection = document.getElementById(`${rangeField}`);
@@ -604,6 +607,10 @@ function addRangeField(rangeField) {
         "title",
         `Valid serial starting with ${rangeConfigChars}`
     );
+    // If the rangeObj is not null it means this function was called by the populateFormWithEditItem function 
+    if (rangeObj) {
+        rangeInputStartsAt.setAttribute("value", rangeObj.startsAt)
+    }
 
     // Append the rangeInputStart elements
     rangeInputStart.appendChild(rangeInputStartsAtLabel);
@@ -634,6 +641,10 @@ function addRangeField(rangeField) {
         "title",
         `Valid serial starting with ${rangeConfigChars}`
     );
+    // If the rangeObj is not null it means this function was called by the populateFormWithEditItem function 
+    if (rangeObj) {
+        rangeInputEndsAt.setAttribute("value", rangeObj.endsAt)
+    }
 
     // Append the rangeInputEnd elements
     rangeInputEnd.appendChild(rangeInputEndsAtLabel);
@@ -669,9 +680,7 @@ function addRangeField(rangeField) {
     exceptionButton.innerHTML = "Add exception";
     exceptionButton.onclick = (e) => {
         addExceptionField(e.target.id) 
-        console.log(e.target.id)
     };
-    // exceptionButton.onclick = (e) => console.log(e.target.id);
 
     // Create the rangeTextAreaContainer which is the div that contains the rangeTextArea element and label
     var rangeTextAreaContainer = document.createElement("div");
@@ -693,6 +702,10 @@ function addRangeField(rangeField) {
         "placeholder",
         "Enter the description the user will see for this serial number range."
     );
+    // If the rangeObj is not null it means this function was called by the populateFormWithEditItem function 
+    if (rangeObj) {
+        rangeTextArea.innerHTML = rangeObj.details
+    }
 
     // Append the rangeTextArea and label to the rangeTextAreaContainer
     rangeTextAreaContainer.appendChild(rangeTextAreaLabel);
@@ -725,9 +738,12 @@ function flashNewRangeContainer(itemToFlash) {
         itemToFlash.style.backgroundColor = "white";
     }, 100);
 }
+// ***************************** EDIT FUNCTION *************************************************
 
 // Used for edit functionality. Runs if there is an itemID in localStorage
 async function populateFormWithEditItem() {
+
+    // create an instance of the editItem to be used in the form
     let editItem = await getItem(itemID)
     console.log('editItem', editItem); //@DEBUG
 
@@ -760,14 +776,28 @@ async function populateFormWithEditItem() {
         var firstRangeEndsAt = firstRanges[1];
         var lastRangeStartsAt = lastRanges[0];
 
+        // Populate the first default range
         editItem.ranges.forEach((range) => {
-            if(range.starts_at === `${configs[i].code}XX00001` || range.starts_at === `${configs[i].code}XE00001`) {
+            if (range.starts_at === `${configs[i].code}XX00001` || range.starts_at === `${configs[i].code}XE00001`) {
                 firstRangeEndsAt.value = range.ends_at;
                 firstRangeTextarea.value = range.details;
             }
         });
+        // Populate intermediate ranges
         editItem.ranges.forEach((range) => {
-            if(range.ends_at === `${configs[i].code}TX99999` || range.ends_at === `${configs[i].code}TE99999`) {
+            if ((range.starts_at.substr(0,4) === `${configs[i].code}`) && (range.starts_at !== `${configs[i].code}XX00001` && range.starts_at !== `${configs[i].code}XE00001`) && (range.ends_at !== `${configs[i].code}TX99999` && range.ends_at !== `${configs[i].code}TE99999`)) {
+                let rangeObj = {
+                    startsAt: range.starts_at,
+                    endsAt: range.ends_at,
+                    details: range.details,
+                };
+                console.log('range', range); //@DEBUG
+                addRangeField(`rangesContainer${configs[i].code}`, rangeObj)
+            }
+        })
+        // Populate the last default range
+        editItem.ranges.forEach((range) => {
+            if (range.ends_at === `${configs[i].code}TX99999` || range.ends_at === `${configs[i].code}TE99999`) {
                 lastRangeStartsAt.value = range.starts_at;
                 lastRangeTextarea.value = range.details;
             }
