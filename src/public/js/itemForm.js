@@ -1,4 +1,4 @@
-import { storeItem, getItem } from "./APIService.js";
+import { storeItem, getItem, editItem } from "./APIService.js";
 import { isSmall, configs } from "./common.js";
 
 const container = document.getElementById("container");
@@ -87,6 +87,7 @@ for (var i = 0; i < addExceptions.length; i++) {
         }
     });
 }
+// ********************************* SUBMIT FUNCTION *****************************************************************
 
 // Check to see if the user click the "Submit" button
 itemForm.addEventListener("submit", (e) => {
@@ -160,7 +161,13 @@ itemForm.addEventListener("submit", (e) => {
         Object.getOwnPropertyNames(itemObj).length > 0
     ) {
         console.log("send the object", itemObj); //@DEBUG
-        storeItem(itemObj);
+        console.log('itemId', itemID); //@DEBUG
+        // storeItem(itemObj);
+        if (itemID) {
+            editItem(itemID, itemObj)
+        } else {
+            storeItem(itemObj);
+        }
     }
 });
 

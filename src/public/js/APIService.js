@@ -85,8 +85,8 @@ export async function editItem(id, data) {
     const content = await response.json();
 
     if(content?.success) {
-        alert(`the Item name has been changed to "${content.item.name}"`);
-        window.location.reload();
+        alert(`the Item "${content.item.name}" has been updated`);
+        localStorage.setItem('itemID', content.item.id);
         return content.item;
     } else {
         alert('Something went wrong');

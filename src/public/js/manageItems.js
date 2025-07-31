@@ -1,4 +1,4 @@
-import { getAllItems, deleteItem, editItem } from "./APIService.js";
+import { getAllItems, deleteItem } from "./APIService.js";
 import { isSmall, handleLayout, createBottomResultsArea } from "./common.js";
 
 const items = await getAllItems();
