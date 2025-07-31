@@ -160,9 +160,8 @@ itemForm.addEventListener("submit", (e) => {
         errorArray.length < 1 &&
         Object.getOwnPropertyNames(itemObj).length > 0
     ) {
-        console.log("send the object", itemObj); //@DEBUG
-        console.log('itemId', itemID); //@DEBUG
-        // storeItem(itemObj);
+        // console.log("send the object", itemObj); //@DEBUG
+        // console.log('itemId', itemID); //@DEBUG
         if (itemID) {
             editItem(itemID, itemObj)
         } else {
@@ -433,7 +432,6 @@ function clearCutInDescription(controlPrefix) {
 }
 
 function addExceptionField(exceptionField, editValue) {
-    // console.log('exceptionField', exceptionField); //@DEBUG
     const exceptionSection = document.getElementById(`${exceptionField}`);
 
     // Find the config of the section this exception is being added to
@@ -754,7 +752,6 @@ async function populateFormWithEditItem() {
 
     // create an instance of the editItem to be used in the form
     let editItem = await getItem(itemID)
-    console.log('editItem', editItem); //@DEBUG
 
     // display the SSO of the user who created the item
     let creator = document.getElementById('creator');
@@ -843,12 +840,6 @@ async function populateFormWithEditItem() {
                     addExceptionField(`exceptionSection${exceptionObj.position}${exceptionObj.name}`, exceptionObj.serial)
                 }
             });
-            console.log('exception', exceptionArr); //@DEBUG
         });
-        console.log('matchArr', exceptionMatchArr); //@DEBUG
     }
-    // create new range containers if needed and populate the starts at, ends at and descriptions
-
-    // create exceptions if needed and populate with serial number in the correct range
-        // I think we are going to create a range id property to relate exceptions with the appropriate range
 }

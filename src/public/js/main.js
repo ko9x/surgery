@@ -290,7 +290,6 @@ itemForm.addEventListener("submit", (e) => {
         errorArray.length < 1 &&
         Object.getOwnPropertyNames(itemObj).length > 0
     ) {
-        console.log("send the object", itemObj); //@DEBUG
         // storeItem(itemObj);
     }
 });
