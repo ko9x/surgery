@@ -87,8 +87,10 @@ export async function editItem(id, data) {
     if(content?.success) {
         alert(`the Item "${content.item.name}" has been updated`);
         localStorage.setItem('itemID', content.item.id);
+        window.location.reload();
         return content.item;
     } else {
+        // console.log(content)
         alert('Something went wrong');
     }
 }
