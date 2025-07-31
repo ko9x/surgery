@@ -776,14 +776,14 @@ async function populateFormWithEditItem() {
         var firstRangeEndsAt = firstRanges[1];
         var lastRangeStartsAt = lastRanges[0];
 
-        // Populate the first default range
+        // Populate the first default range for each configuration
         editItem.ranges.forEach((range) => {
             if (range.starts_at === `${configs[i].code}XX00001` || range.starts_at === `${configs[i].code}XE00001`) {
                 firstRangeEndsAt.value = range.ends_at;
                 firstRangeTextarea.value = range.details;
             }
         });
-        // Populate intermediate ranges
+        // Populate intermediate ranges for each configuration
         editItem.ranges.forEach((range) => {
             if ((range.starts_at.substr(0,4) === `${configs[i].code}`) && (range.starts_at !== `${configs[i].code}XX00001` && range.starts_at !== `${configs[i].code}XE00001`) && (range.ends_at !== `${configs[i].code}TX99999` && range.ends_at !== `${configs[i].code}TE99999`)) {
                 let rangeObj = {
@@ -791,11 +791,10 @@ async function populateFormWithEditItem() {
                     endsAt: range.ends_at,
                     details: range.details,
                 };
-                console.log('range', range); //@DEBUG
                 addRangeField(`rangesContainer${configs[i].code}`, rangeObj)
             }
         })
-        // Populate the last default range
+        // Populate the last default range for each configuration
         editItem.ranges.forEach((range) => {
             if (range.ends_at === `${configs[i].code}TX99999` || range.ends_at === `${configs[i].code}TE99999`) {
                 lastRangeStartsAt.value = range.starts_at;
