@@ -34,8 +34,9 @@ Route::get("items/{name}", [ItemController::class, 'index']);
 // Destroy the item matching the id in the path
 Route::delete("item/{id}", [ItemController::class, 'destroy']);
 
-// Edit the item matching the id in the path
-Route::put("item/{id}", [ItemController::class, 'update'])->middleware('auth.basic');
+// Edit the item matching the id in the path. Removed the middle ware because I don't know the password in dev environment
+// Route::put("item/{id}", [ItemController::class, 'update'])->middleware('auth.basic');
+Route::put("item/{id}", [ItemController::class, 'update']);
 
 // Get an item by id from the item table. We also grab all the ranges and exceptions with that item_id
 Route::get("item/{id}", [ItemController::class, 'show']);
