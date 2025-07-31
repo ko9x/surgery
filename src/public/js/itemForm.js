@@ -481,8 +481,10 @@ function addExceptionField(exceptionField, editValue) {
     // Append the exceptionInputContainer to the exceptionSection
     exceptionSection.appendChild(exceptionInputContainer);
 
-    // Move the cursor to the exception input field
-    exceptionInput.focus();
+    // Move the cursor to the exception input only if not in edit mode (editValue is null)
+    if (!editValue) {
+        exceptionInput.focus();
+    }
 
     // Append the onclick function to the button after all other appends are done so the parent and child elements exist
     removeExceptionButton.onclick = () =>
@@ -679,7 +681,7 @@ function addRangeField(rangeField, rangeObj) {
     exceptionButton.classList.add("exceptionButton");
     exceptionButton.innerHTML = "Add exception";
     exceptionButton.onclick = (e) => {
-        addExceptionField(e.target.id) 
+        addExceptionField(e.target.id)
     };
 
     // Create the rangeTextAreaContainer which is the div that contains the rangeTextArea element and label
@@ -803,6 +805,7 @@ async function populateFormWithEditItem() {
         });
     };
 
+    // Create an array of exception objects that contains the config and position where it should be located
     if (editItem.exceptions.length > 0) {
         let exceptionMatchArr = [];
         editItem.exceptions.forEach((exception) => {
@@ -812,7 +815,7 @@ async function populateFormWithEditItem() {
                 if (range.name === exception.name) {
                     counter = counter + 1;
                     if (range.details === exception.details) {
-                        rangeArr.push({counter: counter, exceptionName: exception.name, serial: exception.serial})
+                        rangeArr.push({position: counter, name: exception.name, serial: exception.serial})
                     }
                     if (range.details != exception.details) {
                         rangeArr.push({serial: exception.serial})
@@ -820,6 +823,20 @@ async function populateFormWithEditItem() {
                 }
             });
             exceptionMatchArr.push(rangeArr)
+        });
+        exceptionMatchArr.forEach((exceptionArr) => {
+            exceptionArr.forEach((exceptionObj) => {
+                if (exceptionObj.position && exceptionObj.position === 1) {
+                    addExceptionField(`exceptionSectionStart${exceptionObj.name}`, exceptionObj.serial)
+                }
+                if (exceptionObj.position && exceptionObj.position === exceptionArr.length) {
+                    addExceptionField(`exceptionSectionEnd${exceptionObj.name}`, exceptionObj.serial)
+                }
+                if (exceptionObj.position && exceptionObj.position > 1 && exceptionArr.length > exceptionObj.position) {
+                    addExceptionField(`exceptionSection${exceptionObj.position}${exceptionObj.name}`, exceptionObj.serial)
+                }
+            });
+            console.log('exception', exceptionArr); //@DEBUG
         });
         console.log('matchArr', exceptionMatchArr); //@DEBUG
     }
