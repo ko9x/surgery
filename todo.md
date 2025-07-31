@@ -1,4 +1,10 @@
 ### Current Focus
+* Get the changes tested until you are certain it is ready for prod
+* Get rid of all the console logs
+* Update the mcgillissean version (remote dev) and make sure everything is working properly
+* Update the work server (prod) and test
+
+### Old what to do (still need to do?)
 * Test all the functions!
     * Some stuff on the server may still be broken from trying to get this working
 * Create an easy way to activate and deactivate the item form and manage page
@@ -94,3 +100,9 @@
 * Test the advanced form functionality
     * Add a pop-up when user presses add intermediate range button warning them to enter serials accurately?
 * Figure out how to wire up the remote database
+* Add the logic to create intermediate ranges in the edit form if they are needed
+    * Make sure their exceptions show up properly
+* Finish getting exceptions to work
+    * Make sure they work even if there are intermediate ranges
+* Make sure that an edited item doesn't get stored as a new item
+    * We have a put function in the backend, but we need to make sure that works for this case
