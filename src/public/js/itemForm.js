@@ -425,7 +425,8 @@ function clearCutInDescription(controlPrefix) {
     }
 }
 
-function addExceptionField(exceptionField) {
+function addExceptionField(exceptionField, editValue) {
+    // console.log('exceptionField', exceptionField); //@DEBUG
     const exceptionSection = document.getElementById(`${exceptionField}`);
 
     // Find the config of the section this exception is being added to
@@ -458,6 +459,9 @@ function addExceptionField(exceptionField) {
         "title",
         `Valid serial starting with ${configChars}`
     );
+    if (editValue) {
+        exceptionInput.setAttribute("value", editValue)
+    }
     exceptionInput.classList.add("exception");
 
     //  Create the removeExceptionButton
@@ -663,7 +667,11 @@ function addRangeField(rangeField) {
     );
     exceptionButton.classList.add("exceptionButton");
     exceptionButton.innerHTML = "Add exception";
-    exceptionButton.onclick = (e) => addExceptionField(e.target.id);
+    exceptionButton.onclick = (e) => {
+        addExceptionField(e.target.id) 
+        console.log(e.target.id)
+    };
+    // exceptionButton.onclick = (e) => console.log(e.target.id);
 
     // Create the rangeTextAreaContainer which is the div that contains the rangeTextArea element and label
     var rangeTextAreaContainer = document.createElement("div");
@@ -718,7 +726,7 @@ function flashNewRangeContainer(itemToFlash) {
     }, 100);
 }
 
-// Used for edit functionality
+// Used for edit functionality. Runs if there is an itemID in localStorage
 async function populateFormWithEditItem() {
     let editItem = await getItem(itemID)
     console.log('editItem', editItem); //@DEBUG
@@ -736,96 +744,56 @@ async function populateFormWithEditItem() {
     for (var config of configs) {
         let itemRange = document.getElementsByClassName(config.code);
         itemRanges.push(itemRange)
-        // console.log('itemRanges', itemRanges[0]); //@DEBUG
-
-        // for (var range of itemRanges) {
-            // console.log('range', range)
-            // var rangeInputs = range.getElementsByTagName("input");
-            // var rangeTextarea = range.getElementsByTagName("textarea")[0].value;
-
-            // let rangeObj = {
-            //     name: config.code,
-            //     starts_at: rangeInputs[0].value.toUpperCase(),
-            //     ends_at: rangeInputs[1].value.toUpperCase(),
-            //     details: rangeTextarea,
-            // };
-            // ranges.push(rangeObj);
-
-            // // We reference the exception by ClassName because the ById and ByName methods only exist on the document object
-            // // The getElementsByClassName method exists on all HTML elements
-            // var exceptionInputs = range.getElementsByClassName("exception");
-
-            // // Group each exception with the corresponding range information and add the object to the exceptions array
-            // for (var exceptionInput of exceptionInputs) {
-            //     let exceptionObj = {
-            //         name: config.code,
-            //         serial: exceptionInput.value.toUpperCase(),
-            //         details: rangeTextarea,
-            //     };
-            //     exceptions.push(exceptionObj);
-            // }
-        // }
     }
 
-
-// console.log(itemRanges[0]);
-
-// let mainRange = itemRanges[0];
-
-// var firstRanges = mainRange[0].getElementsByTagName("input");
-// var firstRangeTextarea = mainRange[0].getElementsByTagName("textarea")[0];
-// var lastRanges = mainRange[1].getElementsByTagName("input");
-// var lastRangeTextarea = mainRange[1].getElementsByTagName("textarea")[0];
-
-// var firstRangeEndsAt = firstRanges[1];
-// var lastRangeStartsAt = lastRanges[0];
-
-// firstRangeEndsAt.value = editItem.ranges[0].ends_at
-// lastRangeStartsAt.value = editItem.ranges[1].starts_at
-// firstRangeTextarea.value = editItem.ranges[0].details
-// lastRangeTextarea.value = editItem.ranges[1].details
-
-// console.log('firstRangeEndsAt', firstRangeEndsAt); //@DEBUG
-// console.log('lastRangeStartsAt', lastRangeStartsAt); //@DEBUG
-// console.log('firstRangeTextarea', firstRangeTextarea); //@DEBUG
+    let mainRange = itemRanges[0];
 
 // populate the default range containers with starts at, ends at, and descriptions
-for(var i = 0; i < itemRanges.length; i++) {
-    let currentRange = itemRanges[i]
+    for(var i = 0; i < itemRanges.length; i++) {
+        let currentRange = itemRanges[i]
 
-    var firstRanges = currentRange[0].getElementsByTagName("input");
-    var firstRangeTextarea = currentRange[0].getElementsByTagName("textarea")[0];
-    var lastRanges = currentRange[1].getElementsByTagName("input");
-    var lastRangeTextarea = currentRange[1].getElementsByTagName("textarea")[0];
+        var firstRanges = currentRange[0].getElementsByTagName("input");
+        var firstRangeTextarea = currentRange[0].getElementsByTagName("textarea")[0];
+        var lastRanges = currentRange[1].getElementsByTagName("input");
+        var lastRangeTextarea = currentRange[1].getElementsByTagName("textarea")[0];
 
-    var firstRangeEndsAt = firstRanges[1];
-    var lastRangeStartsAt = lastRanges[0];
+        var firstRangeEndsAt = firstRanges[1];
+        var lastRangeStartsAt = lastRanges[0];
 
-    editItem.ranges.forEach((range) => {
-        if(range.starts_at === `${configs[i].code}XX00001` || range.starts_at === `${configs[i].code}XE00001`) {
-            firstRangeEndsAt.value = range.ends_at
-            firstRangeTextarea.value = range.details
-        }
-    })
-    editItem.ranges.forEach((range) => {
-        if(range.ends_at === `${configs[i].code}TX99999` || range.ends_at === `${configs[i].code}TE99999`) {
-            lastRangeStartsAt.value = range.starts_at
-            lastRangeTextarea.value = range.details
-        }
-    })
-};
+        editItem.ranges.forEach((range) => {
+            if(range.starts_at === `${configs[i].code}XX00001` || range.starts_at === `${configs[i].code}XE00001`) {
+                firstRangeEndsAt.value = range.ends_at;
+                firstRangeTextarea.value = range.details;
+            }
+        });
+        editItem.ranges.forEach((range) => {
+            if(range.ends_at === `${configs[i].code}TX99999` || range.ends_at === `${configs[i].code}TE99999`) {
+                lastRangeStartsAt.value = range.starts_at;
+                lastRangeTextarea.value = range.details;
+            }
+        });
+    };
 
-// for(var i = 0; i < addRanges.length; i++) {
-//     addRanges[i].addEventListener("click", (e) => {
-//       addRangeField(e.target.value);
-//     });
-//   };
-
-
-    // let defaultF9XX = document.getElementById('rangesContainerF9XX');
-    // let defaultEndAt = defaultF9XX.children[0].children[0].children[1].children[1];
-    // defaultEndAt.value = 'F9XXXX00200'
-// console.log('defaultF9XX', defaultF9XX.children[0].children[0].children[1].children[1]); //@DEBUG
+    if (editItem.exceptions.length > 0) {
+        let exceptionMatchArr = [];
+        editItem.exceptions.forEach((exception) => {
+            let counter = 0;
+            let rangeArr = [];
+            editItem.ranges.forEach((range) => {
+                if (range.name === exception.name) {
+                    counter = counter + 1;
+                    if (range.details === exception.details) {
+                        rangeArr.push({counter: counter, exceptionName: exception.name, serial: exception.serial})
+                    }
+                    if (range.details != exception.details) {
+                        rangeArr.push({serial: exception.serial})
+                    }
+                }
+            });
+            exceptionMatchArr.push(rangeArr)
+        });
+        console.log('matchArr', exceptionMatchArr); //@DEBUG
+    }
     // create new range containers if needed and populate the starts at, ends at and descriptions
 
     // create exceptions if needed and populate with serial number in the correct range
