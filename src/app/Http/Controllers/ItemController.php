@@ -122,19 +122,52 @@ class ItemController extends Controller
         return response()->json(['success' => true, 'message' => 'item deleted.', 'item' => $item ]);
     }
 
+    // We are just destroying the old item and creating a new one with the updated info
     public function update(Request $request, $id) {
-        $data = $request->all();
+        // Find and destroy the item
         $item = item::find( $id );
 
         if(!$item ){
             return response()->json(['success' => false, 'error' => 'No item found.' ]);
         }
 
-        $item->name = $data['name'];
+        // Find all the ranges associated with the item delete them
+        $item->ranges = DB::table('ranges')
+            ->where('item_id', '=', $item->id)
+            ->delete();
 
-        $item->save();
+        // Find all the exceptions associated with the item delete them
+        $item->exceptions = DB::table('exceptions')
+            ->where('item_id', '=', $item->id)
+            ->delete();
 
-        return response()->json(['success' => true, 'message' => 'item updated.', 'item' => $item ]);
+        $item->delete();
+
+        // Create a new item with the updated data
+        $data = $request->all();
+
+        $item = Item::create([
+            'name' => $data['name'],
+            'creator' => $data['creator']
+        ]);
+
+        $ranges = $data['ranges'];
+        $exceptions = $data['exceptions'];
+        $itemId = $item->id;
+
+        foreach ($ranges as $range) {
+            $range = RangeController::store($range, $itemId);
+        }
+
+        foreach ($exceptions as $exception) {
+            $exception = ExceptionController::store($exception, $itemId);
+        }
+
+        if (!$item) {
+            return response()->json(['success' => true, 'error' => 'Item not updated' ]);
+        } else {
+            return response()->json(['success' => true, 'item' => $item, 'ranges' => $ranges, 'exceptions' => $exceptions ]);
+        }
     }
 
     // These are just test functions to make sure the route is working
